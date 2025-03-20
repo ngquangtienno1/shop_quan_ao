@@ -35,23 +35,25 @@
                                     </div>
 
                                     <div class="table-responsive table-card mt-3 mb-1">
+                                        <!-- Phương pháp 2: Sử dụng tính năng Str::limit của Laravel -->
                                         <table class="table align-middle table-nowrap" id="customerTable">
                                             <thead class="table-light">
                                                 <tr>
-
                                                     <th>STT</th>
                                                     <th>Tên danh mục</th>
                                                     <th>Mô tả</th>
-                                                    <th class="sort" data-sort="action">Action</th>
+                                                    <th >Action</th>
                                                 </tr>
                                             </thead>
                                             <tbody class="list form-check-all">
                                                 @foreach ($categories as $key => $item)
                                                     <tr>
-
                                                         <td>{{ $key + 1 }}</td>
                                                         <td class="customer_name">{{ $item->name }}</td>
-                                                        <td class="email">{{ $item->description }}</td>
+                                                        <td class="email text-truncate" style="max-width: 250px;"
+                                                            data-bs-toggle="tooltip" title="{{ $item->description }}">
+                                                            {{ $item->description }}
+                                                        </td>
                                                         <td>
                                                             <div class="d-flex gap-2">
                                                                 <div class="edit">
@@ -69,9 +71,7 @@
                                                         </td>
                                                     </tr>
                                                 @endforeach
-
                                             </tbody>
-                                            
                                         </table>
                                         <div class="noresult" style="display: none">
                                             <div class="text-center">
@@ -91,17 +91,19 @@
                                         trong
                                         tổng số {{ $categories->total() }} danh mục.</p>
                                     <script>
-                                        $(document).on('click', '.pagination a', function(event) {
-                                            event.preventDefault();
-                                            let page = $(this).attr('href').split('page=')[1];
-                                            fetch_data(page);
-                                        });
-
                                         function fetch_data(page) {
                                             $.ajax({
                                                 url: "/categories?page=" + page,
+                                                type: "GET",
+                                                headers: {
+                                                    'X-Requested-With': 'XMLHttpRequest'
+                                                },
                                                 success: function(data) {
-                                                    $('#pagination').html(data);
+                                                    // Sử dụng jQuery để thay thế toàn bộ nội dung phần tử chứa bảng
+                                                    $("#pagination").html($(data).find("#pagination").html());
+
+                                                    // Cập nhật URL
+                                                    window.history.pushState({}, "", "/categories?page=" + page);
                                                 }
                                             });
                                         }
