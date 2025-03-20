@@ -3,7 +3,7 @@
 @include('admin.layouts.sidebar')
 
 
-@yield('content')
+@include($template)
 
 
 @include('admin.layouts.footer')

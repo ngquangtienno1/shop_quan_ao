@@ -7,6 +7,8 @@
 
 
 
+
+
         <!-- Vertical Overlay-->
         <div class="vertical-overlay"></div>
 
@@ -223,49 +225,49 @@
                                     <div data-simplebar class="mx-n3 px-3" style="height: 375px;">
                                         <div class="vstack gap-3">
                                             <div class="d-flex gap-3">
-                                                <img src="assets/images/users/avatar-3.jpg" alt="" class="avatar-sm rounded flex-shrink-0">
+                                                <img src="themeadmin/velzon/assets/images/users/avatar-3.jpg" alt="" class="avatar-sm rounded flex-shrink-0">
                                                 <div class="flex-shrink-1">
                                                     <h6 class="mb-2">Diana Kohler <span class="text-muted">Has commented</span></h6>
                                                     <p class="text-muted mb-0">" Really well-written and informative. The emotional connection strategy is something I’ll be testing out more! "</p>
                                                 </div>
                                             </div>
                                             <div class="d-flex gap-3">
-                                                <img src="assets/images/users/avatar-5.jpg" alt="" class="avatar-sm rounded flex-shrink-0">
+                                                <img src="themeadmin/velzon/assets/images/users/avatar-5.jpg" alt="" class="avatar-sm rounded flex-shrink-0">
                                                 <div class="flex-shrink-1">
                                                     <h6 class="mb-2">Tonya Noble <span class="text-muted">Has commented</span></h6>
                                                     <p class="text-muted mb-0">" Incredibly helpful tips, especially about adding a call to action. I’ve been missing that step and will implement it in my next post! "</p>
                                                 </div>
                                             </div>
                                             <div class="d-flex gap-3">
-                                                <img src="assets/images/users/avatar-6.jpg" alt="" class="avatar-sm rounded flex-shrink-0">
+                                                <img src="themeadmin/velzon/assets/images/users/avatar-6.jpg" alt="" class="avatar-sm rounded flex-shrink-0">
                                                 <div class="flex-shrink-1">
                                                     <h6 class="mb-2">Donald Palmer <span class="text-muted">Has commented</span></h6>
                                                     <p class="text-muted mb-0">" Fantastic read! The power of visuals and trends really stood out to me. Thanks for sharing these useful insights! "</p>
                                                 </div>
                                             </div>
                                             <div class="d-flex gap-3">
-                                                <img src="assets/images/users/avatar-7.jpg" alt="" class="avatar-sm rounded flex-shrink-0">
+                                                <img src="themeadmin/velzon/assets/images/users/avatar-7.jpg" alt="" class="avatar-sm rounded flex-shrink-0">
                                                 <div class="flex-shrink-1">
                                                     <h6 class="mb-2">Joseph Parker <span class="text-muted">Has commented</span></h6>
                                                     <p class="text-muted mb-0">" Great post! Simple yet powerful tips that I can start using immediately. Thanks for sharing your expertise! "</p>
                                                 </div>
                                             </div>
                                             <div class="d-flex gap-3">
-                                                <img src="assets/images/users/avatar-9.jpg" alt="" class="avatar-sm rounded flex-shrink-0">
+                                                <img src="themeadmin/velzon/assets/images/users/avatar-9.jpg" alt="" class="avatar-sm rounded flex-shrink-0">
                                                 <div class="flex-shrink-1">
                                                     <h6 class="mb-2">Timothy Smith <span class="text-muted">Has commented</span></h6>
                                                     <p class="text-muted mb-0">" Wow, this has opened my eyes to a new perspective on creating content. Emotional triggers—such a smart way to engage users! "</p>
                                                 </div>
                                             </div>
                                             <div class="d-flex gap-3">
-                                                <img src="assets/images/users/avatar-10.jpg" alt="" class="avatar-sm rounded flex-shrink-0">
+                                                <img src="themeadmin/velzon/assets/images/users/avatar-10.jpg" alt="" class="avatar-sm rounded flex-shrink-0">
                                                 <div class="flex-shrink-1">
                                                     <h6 class="mb-2">Alexis Clarke <span class="text-muted">Has commented</span></h6>
                                                     <p class="text-muted mb-0">" Fantastic read! The power of visuals and trends really stood out to me. Thanks for sharing these useful insights! "</p>
                                                 </div>
                                             </div>
                                             <div class="d-flex gap-3">
-                                                <img src="assets/images/users/avatar-2.jpg" alt="" class="avatar-sm rounded flex-shrink-0">
+                                                <img src="themeadmin/velzon/assets/images/users/avatar-2.jpg" alt="" class="avatar-sm rounded flex-shrink-0">
                                                 <div class="flex-shrink-1">
                                                     <h6 class="mb-2">Thomas Taylor <span class="text-muted">Has commented</span></h6>
                                                     <p class="text-muted mb-0">" Loved the section on visual storytelling. It’s true that images speak louder on social media platforms. More visuals in my next posts for sure! "</p>
@@ -313,7 +315,7 @@
                                                 <tr>
                                                     <td>01</td>
                                                     <td>
-                                                        <img src="assets/images/blog/img-2.jpg" alt="" class="me-2 rounded" height="40">
+                                                        <img src="themeadmin/velzon/assets/images/blog/img-2.jpg" alt="" class="me-2 rounded" height="40">
                                                         <a href="#!" class="text-body fw-medium">The Evolution of Minimalism in Design</a>
                                                     </td>
                                                     <td>20 Sep, 2024</td>
@@ -326,7 +328,7 @@
                                                 <tr>
                                                     <td>02</td>
                                                     <td>
-                                                        <img src="assets/images/blog/img-3.jpg" alt="" class="me-2 rounded" height="40">
+                                                        <img src="themeadmin/velzon/assets/images/blog/img-3.jpg" alt="" class="me-2 rounded" height="40">
                                                         <a href="#!" class="text-body fw-medium">Mastering User Experience Through Storytelling</a>
                                                     </td>
                                                     <td>11 Feb, 2024</td>
@@ -339,7 +341,7 @@
                                                 <tr>
                                                     <td>03</td>
                                                     <td>
-                                                        <img src="assets/images/blog/img-4.jpg" alt="" class="me-2 rounded" height="40">
+                                                        <img src="themeadmin/velzon/assets/images/blog/img-4.jpg" alt="" class="me-2 rounded" height="40">
                                                         <a href="#!" class="text-body fw-medium">Designing for Purpose: A Mindful Approach</a>
                                                     </td>
                                                     <td>15 Sep, 2024</td>
@@ -352,7 +354,7 @@
                                                 <tr>
                                                     <td>04</td>
                                                     <td>
-                                                        <img src="assets/images/blog/img-5.jpg" alt="" class="me-2 rounded" height="40">
+                                                        <img src="themeadmin/velzon/assets/images/blog/img-5.jpg" alt="" class="me-2 rounded" height="40">
                                                         <a href="#!" class="text-body fw-medium">How to Overcome Creative Block</a>
                                                     </td>
                                                     <td>09 July, 2024</td>
@@ -365,7 +367,7 @@
                                                 <tr>
                                                     <td>05</td>
                                                     <td>
-                                                        <img src="assets/images/blog/img-6.jpg" alt="" class="me-2 rounded" height="40">
+                                                        <img src="themeadmin/velzon/assets/images/blog/img-6.jpg" alt="" class="me-2 rounded" height="40">
                                                         <a href="#!" class="text-body fw-medium">Building Brand Identity through Design</a>
                                                     </td>
                                                     <td>19 Nov, 2024</td>
@@ -413,7 +415,7 @@
                                         <div class="card-body">
                                             <div class="d-flex">
                                                 <div class="flex-shrink-0 me-3">
-                                                    <img src="assets/images/users/avatar-1.jpg" alt="" class="avatar-sm rounded-circle img-thumbnail">
+                                                    <img src="themeadmin/velzon/assets/images/users/avatar-1.jpg" alt="" class="avatar-sm rounded-circle img-thumbnail">
                                                 </div>
                                                 <div class="flex-grow-1">
                                                     <div class="d-flex">
@@ -498,8 +500,7 @@
     <!-- END layout-wrapper -->
 
 
-
-    {{-- <!--start back-to-top-->
+    <!--start back-to-top-->
     <button onclick="topFunction()" class="btn btn-danger btn-icon" id="back-to-top">
         <i class="ri-arrow-up-line"></i>
     </button>
@@ -520,4 +521,5 @@
         </div>
     </div>
 
- --}}
+
+
