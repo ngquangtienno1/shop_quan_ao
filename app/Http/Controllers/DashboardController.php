@@ -15,7 +15,7 @@ class DashboardController extends Controller
     {
         //
 
-$template = 'admin.dashboard.index';
+        $template = 'admin.dashboard.index';
         return view('admin.dashboard.app',compact('template'));
     }
 
