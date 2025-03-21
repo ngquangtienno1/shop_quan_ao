@@ -1,16 +1,30 @@
+<!doctype html>
+<html lang="en">
 
 
+<!-- Mirrored from themesbrand.com/dason/layouts/index.html by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 21 Mar 2025 10:58:14 GMT -->
+
+<head>
+    <base href="{{ env('APP_URL') }}">
+    <meta charset="utf-8" />
+    <title>{{ $title }}</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta content="Premium Multipurpose Admin & Dashboard Template" name="description" />
+    <meta content="Themesbrand" name="author" />
+    @include('admin.layouts.libs_css')
+
+</head>
+
+<body data-topbar="dark">
+
+    @include('admin.layouts.header')
     <!-- Begin page -->
     <div id="layout-wrapper">
 
 
+        @include('admin.layouts.sidebar')
 
 
-
-
-
-        <!-- Vertical Overlay-->
-        <div class="vertical-overlay"></div>
 
         <!-- ============================================================== -->
         <!-- Start right Content here -->
@@ -24,12 +38,12 @@
                     <div class="row">
                         <div class="col-12">
                             <div class="page-title-box d-sm-flex align-items-center justify-content-between">
-                                <h4 class="mb-sm-0">Blog</h4>
+                                <h4 class="mb-sm-0 font-size-18">Welcome !</h4>
 
                                 <div class="page-title-right">
                                     <ol class="breadcrumb m-0">
-                                        <li class="breadcrumb-item"><a href="javascript: void(0);">Dashboards</a></li>
-                                        <li class="breadcrumb-item active">Blog</li>
+                                        <li class="breadcrumb-item"><a href="javascript: void(0);">Dashboard</a></li>
+                                        <li class="breadcrumb-item active">Welcome !</li>
                                     </ol>
                                 </div>
 
@@ -39,460 +53,1066 @@
                     <!-- end page title -->
 
                     <div class="row">
-                        <div class="col-xl-9">
-                            <div class="row">
-                                <div class="col-lg-3">
-                                    <div class="card">
-                                        <div class="card-body d-flex gap-3 align-items-center">
-                                            <div class="avatar-sm">
-                                                <div class="avatar-title border bg-success-subtle border-success border-opacity-25 rounded-2 fs-17">
-                                                    <i data-feather="users" class="icon-dual-success"></i>
-                                                </div>
+                        <div class="col-xl-3 col-md-6">
+                            <!-- card -->
+                            <div class="card card-h-100">
+                                <!-- card body -->
+                                <div class="card-body">
+                                    <div class="d-flex align-items-center">
+                                        <div class="flex-grow-1">
+                                            <span class="text-muted mb-3 lh-1 d-block text-truncate">Total Sales</span>
+                                            <h4 class="mb-3">
+                                                $<span class="counter-value" data-target="354.5">0</span>k
+                                            </h4>
+                                            <div class="text-nowrap">
+                                                <span class="badge bg-success-subtle text-success">+$20.9k</span>
+                                                <span class="ms-1 text-muted font-size-13">Since last week</span>
                                             </div>
-                                            <div class="flex-grow-1">
-                                                <h5 class="fs-15">17.6k</h5>
-                                                <p class="mb-0 text-muted">Followers</p>
+                                        </div>
+
+                                        <div class="flex-shrink-0 text-end dash-widget">
+                                            <div id="mini-chart1" data-colors='["--bs-primary", "--bs-success"]'
+                                                class="apex-charts"></div>
+                                        </div>
+                                    </div>
+                                </div><!-- end card body -->
+                            </div><!-- end card -->
+                        </div><!-- end col -->
+
+                        <div class="col-xl-3 col-md-6">
+                            <!-- card -->
+                            <div class="card card-h-100">
+                                <!-- card body -->
+                                <div class="card-body">
+                                    <div class="d-flex align-items-center">
+                                        <div class="flex-grow-1">
+                                            <span class="text-muted mb-3 lh-1 d-block text-truncate">Total Items</span>
+                                            <h4 class="mb-3">
+                                                <span class="counter-value" data-target="1256">0</span>
+                                            </h4>
+                                            <div class="text-nowrap">
+                                                <span class="badge bg-danger-subtle text-danger">-29 Trades</span>
+                                                <span class="ms-1 text-muted font-size-13">Since last week</span>
+                                            </div>
+                                        </div>
+                                        <div class="flex-shrink-0 text-end dash-widget">
+                                            <div id="mini-chart2" data-colors='["--bs-primary", "--bs-success"]'
+                                                class="apex-charts"></div>
+                                        </div>
+                                    </div>
+                                </div><!-- end card body -->
+                            </div><!-- end card -->
+                        </div><!-- end col-->
+
+                        <div class="col-xl-3 col-md-6">
+                            <!-- card -->
+                            <div class="card card-h-100">
+                                <!-- card body -->
+                                <div class="card-body">
+                                    <div class="d-flex align-items-center">
+                                        <div class="flex-grow-1">
+                                            <span class="text-muted mb-3 lh-1 d-block text-truncate">Average
+                                                Sales</span>
+                                            <h4 class="mb-3">
+                                                $<span class="counter-value" data-target="7.54">0</span>M
+                                            </h4>
+                                            <div class="text-nowrap">
+                                                <span class="badge bg-success-subtle text-success">+ $2.8k</span>
+                                                <span class="ms-1 text-muted font-size-13">Since last week</span>
+                                            </div>
+                                        </div>
+                                        <div class="flex-shrink-0 text-end dash-widget">
+                                            <div id="mini-chart3" data-colors='["--bs-primary", "--bs-success"]'
+                                                class="apex-charts"></div>
+                                        </div>
+                                    </div>
+                                </div><!-- end card body -->
+                            </div><!-- end card -->
+                        </div><!-- end col -->
+
+                        <div class="col-xl-3 col-md-6">
+                            <!-- card -->
+                            <div class="card card-h-100">
+                                <!-- card body -->
+                                <div class="card-body">
+                                    <div class="d-flex align-items-center">
+                                        <div class="flex-grow-1">
+                                            <span class="text-muted mb-3 lh-1 d-block text-truncate">Order
+                                                Delivery</span>
+                                            <h4 class="mb-3">
+                                                <span class="counter-value" data-target="18.34">0</span>%
+                                            </h4>
+                                            <div class="text-nowrap">
+                                                <span class="badge bg-success-subtle text-success">+5.32%</span>
+                                                <span class="ms-1 text-muted font-size-13">Since last week</span>
+                                            </div>
+                                        </div>
+                                        <div class="flex-shrink-0 text-end dash-widget">
+                                            <div id="mini-chart4" data-colors='["--bs-primary", "--bs-success"]'
+                                                class="apex-charts"></div>
+                                        </div>
+                                    </div>
+                                </div><!-- end card body -->
+                            </div><!-- end card -->
+                        </div><!-- end col -->
+                    </div><!-- end row-->
+
+                    <div class="row">
+                        <div class="col-xl-8">
+                            <!-- card -->
+                            <div class="card">
+                                <!-- card body -->
+                                <div class="card-body">
+                                    <div class="d-flex flex-wrap align-items-center mb-4">
+                                        <h5 class="card-title me-2">Market Overview</h5>
+                                        <div class="ms-auto">
+                                            <div>
+                                                <button type="button" class="btn btn-soft-primary btn-sm">
+                                                    ALL
+                                                </button>
+                                                <button type="button" class="btn btn-soft-secondary btn-sm">
+                                                    1M
+                                                </button>
+                                                <button type="button" class="btn btn-soft-secondary btn-sm">
+                                                    6M
+                                                </button>
+                                                <button type="button" class="btn btn-soft-secondary btn-sm">
+                                                    1Y
+                                                </button>
                                             </div>
                                         </div>
                                     </div>
-                                </div><!--end col-->
-                                <div class="col-lg-3">
-                                    <div class="card">
-                                        <div class="card-body d-flex gap-3 align-items-center">
-                                            <div class="avatar-sm">
-                                                <div class="avatar-title border bg-warning-subtle border-warning border-opacity-25 rounded-2 fs-17">
-                                                    <i data-feather="file-text" class="icon-dual-warning"></i>
-                                                </div>
-                                            </div>
-                                            <div class="flex-grow-1">
-                                                <h5 class="fs-15">149</h5>
-                                                <p class="mb-0 text-muted">Total Post</p>
+
+                                    <div class="row align-items-center">
+                                        <div class="col-xl-8">
+                                            <div>
+                                                <div id="market-overview" data-colors='["--bs-primary", "--bs-success"]'
+                                                    class="apex-charts"></div>
                                             </div>
                                         </div>
-                                    </div>
-                                </div><!--end col-->
-                                <div class="col-lg-3">
-                                    <div class="card">
-                                        <div class="card-body d-flex gap-3 align-items-center">
-                                            <div class="avatar-sm">
-                                                <div class="avatar-title border bg-danger-subtle border-danger border-opacity-25 rounded-2 fs-17">
-                                                    <i data-feather="heart" class="icon-dual-danger"></i>
-                                                </div>
-                                            </div>
-                                            <div class="flex-grow-1">
-                                                <h5 class="fs-15">24.8k</h5>
-                                                <p class="mb-0 text-muted">Likes</p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div><!--end col-->
-                                <div class="col-lg-3">
-                                    <div class="card">
-                                        <div class="card-body d-flex gap-3 align-items-center">
-                                            <div class="avatar-sm">
-                                                <div class="avatar-title border bg-primary-subtle border-primary border-opacity-25 rounded-2 fs-17">
-                                                    <i data-feather="bar-chart" class="icon-dual-primary"></i>
-                                                </div>
-                                            </div>
-                                            <div class="flex-grow-1">
-                                                <h5 class="fs-15">54.3k</h5>
-                                                <p class="mb-0 text-muted">Views</p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div><!--end col-->
-                                <div class="col-lg-8">
-                                    <div class="card">
-                                        <div class="card-header align-items-center d-flex">
-                                            <h5 class="card-title mb-0 flex-grow-1">Site Visitors</h5>
-                                            <div class="flex-shrink-0">
-                                                <div class="dropdown card-header-dropdown">
-                                                    <a class="text-reset dropdown-btn" href="#" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                                        <span class="fw-semibold text-uppercase fs-12">Sort by: </span><span class="text-muted">Current Week<i class="mdi mdi-chevron-down ms-1"></i></span>
-                                                    </a>
-                                                    <div class="dropdown-menu dropdown-menu-end">
-                                                        <a class="dropdown-item" href="#">Today</a>
-                                                        <a class="dropdown-item" href="#">Last Week</a>
-                                                        <a class="dropdown-item" href="#">Last Month</a>
-                                                        <a class="dropdown-item" href="#">Current Year</a>
+                                        <div class="col-xl-4">
+                                            <div class="p-4">
+                                                <div class="mt-0">
+                                                    <div class="d-flex align-items-center">
+                                                        <div class="avatar-sm m-auto">
+                                                            <span
+                                                                class="avatar-title rounded-circle bg-light text-dark font-size-13">
+                                                                1
+                                                            </span>
+                                                        </div>
+                                                        <div class="flex-grow-1 ms-3">
+                                                            <span class="font-size-14">Mobile Phones</span>
+                                                        </div>
+
+                                                        <div class="flex-shrink-0">
+                                                            <span
+                                                                class="badge rounded-pill bg-success-subtle text-success  font-size-12 fw-medium">+5.4%</span>
+                                                        </div>
                                                     </div>
                                                 </div>
-                                            </div>
-                                        </div><!-- end card header -->
-                                        <div class="card-body">
-                                            <div id="column_chart_datalabel" data-colors='["--vz-primary"]' class="apex-charts" dir="ltr"></div>
-                                        </div>
-                                    </div>
-                                </div><!--end col-->
-                                <div class="col-lg-4">
-                                    <div class="card">
-                                        <div class="card-header align-items-center d-flex">
-                                            <h5 class="card-title mb-0 flex-grow-1">Top Social Media Shares</h5>
-                                            <div class="flex-shrink-0">
-                                                <div class="dropdown card-header-dropdown">
-                                                    <a class="text-reset dropdown-btn" href="#" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                                        <span class="text-muted fs-16"><i class="mdi mdi-dots-vertical align-middle"></i></span>
-                                                    </a>
-                                                    <div class="dropdown-menu dropdown-menu-end">
-                                                        <a class="dropdown-item" href="#">Today</a>
-                                                        <a class="dropdown-item" href="#">Last Week</a>
-                                                        <a class="dropdown-item" href="#">Last Month</a>
-                                                        <a class="dropdown-item" href="#">Current Year</a>
+
+                                                <div class="mt-3">
+                                                    <div class="d-flex align-items-center">
+                                                        <div class="avatar-sm m-auto">
+                                                            <span
+                                                                class="avatar-title rounded-circle bg-light text-dark font-size-13">
+                                                                2
+                                                            </span>
+                                                        </div>
+                                                        <div class="flex-grow-1 ms-3">
+                                                            <span class="font-size-14">Smart Watch</span>
+                                                        </div>
+
+                                                        <div class="flex-shrink-0">
+                                                            <span
+                                                                class="badge rounded-pill bg-success-subtle text-success  font-size-12 fw-medium">+6.8%</span>
+                                                        </div>
                                                     </div>
                                                 </div>
-                                            </div>
-                                        </div><!-- end card header -->
-                                        <div class="card-body">
-                                            <div class="d-flex gap-2 align-items-center mb-2">
-                                                <div class="avatar-xs flex-shrink-0">
-                                                    <div class="avatar-title bg-primary-subtle text-primary rounded-2 fs-17">
-                                                        <i class="ri-facebook-box-fill"></i>
+
+                                                <div class="mt-3">
+                                                    <div class="d-flex align-items-center">
+                                                        <div class="avatar-sm m-auto">
+                                                            <span
+                                                                class="avatar-title rounded-circle bg-light text-dark font-size-13">
+                                                                3
+                                                            </span>
+                                                        </div>
+                                                        <div class="flex-grow-1 ms-3">
+                                                            <span class="font-size-14">Protable Acoustics</span>
+                                                        </div>
+
+                                                        <div class="flex-shrink-0">
+                                                            <span
+                                                                class="badge rounded-pill bg-danger-subtle text-danger  font-size-12 fw-medium">-4.9%</span>
+                                                        </div>
                                                     </div>
                                                 </div>
-                                                <h6 class="mb-0 fs-14 flex-grow-1">Facebook</h6>
-                                                <h6 class="flex-shrink-0 mb-0">32k</h6>
-                                            </div>
-                                            <div class="d-flex gap-2 align-items-center mb-2">
-                                                <div class="avatar-xs flex-shrink-0">
-                                                    <div class="avatar-title bg-danger-subtle text-danger rounded-2 fs-17">
-                                                        <i class="ri-google-line"></i>
+
+                                                <div class="mt-3">
+                                                    <div class="d-flex align-items-center">
+                                                        <div class="avatar-sm m-auto">
+                                                            <span
+                                                                class="avatar-title rounded-circle bg-light text-dark font-size-13">
+                                                                4
+                                                            </span>
+                                                        </div>
+                                                        <div class="flex-grow-1 ms-3">
+                                                            <span class="font-size-14">Smart Speakers</span>
+                                                        </div>
+
+                                                        <div class="flex-shrink-0">
+                                                            <span
+                                                                class="badge rounded-pill bg-success-subtle text-success  font-size-12 fw-medium">+3.5%</span>
+                                                        </div>
                                                     </div>
                                                 </div>
-                                                <h6 class="mb-0 fs-14 flex-grow-1">Google</h6>
-                                                <h6 class="flex-shrink-0 mb-0">13k</h6>
-                                            </div>
-                                            <div class="d-flex gap-2 align-items-center mb-2">
-                                                <div class="avatar-xs flex-shrink-0">
-                                                    <div class="avatar-title bg-success-subtle text-success rounded-2 fs-17">
-                                                        <i class="ri-whatsapp-line"></i>
+
+                                                <div class="mt-3">
+                                                    <div class="d-flex align-items-center">
+                                                        <div class="avatar-sm m-auto">
+                                                            <span
+                                                                class="avatar-title rounded-circle bg-light text-dark font-size-13">
+                                                                5
+                                                            </span>
+                                                        </div>
+                                                        <div class="flex-grow-1 ms-3">
+                                                            <span class="font-size-14">Camcorders</span>
+                                                        </div>
+
+                                                        <div class="flex-shrink-0">
+                                                            <span
+                                                                class="badge rounded-pill bg-danger-subtle text-danger  font-size-12 fw-medium">-0.3%</span>
+                                                        </div>
                                                     </div>
                                                 </div>
-                                                <h6 class="mb-0 fs-14 flex-grow-1">WhatsApp</h6>
-                                                <h6 class="flex-shrink-0 mb-0">11k</h6>
-                                            </div>
-                                            <div class="d-flex gap-2 align-items-center mb-2">
-                                                <div class="avatar-xs flex-shrink-0">
-                                                    <div class="avatar-title bg-dark-subtle text-dark rounded-2 fs-17">
-                                                        <i class="ri-invision-line"></i>
-                                                    </div>
+                                                <div class="mt-4 pt-2">
+                                                    <a href="#" class="btn btn-primary w-100">See All Balances
+                                                        <i class="mdi mdi-arrow-right ms-1"></i></a>
                                                 </div>
-                                                <h6 class="mb-0 fs-14 flex-grow-1">Invision</h6>
-                                                <h6 class="flex-shrink-0 mb-0">19k</h6>
-                                            </div>
-                                            <div class="d-flex gap-2 align-items-center mb-2">
-                                                <div class="avatar-xs flex-shrink-0">
-                                                    <div class="avatar-title bg-danger-subtle text-danger rounded-2 fs-17">
-                                                        <i class="ri-instagram-line"></i>
-                                                    </div>
-                                                </div>
-                                                <h6 class="mb-0 fs-14 flex-grow-1">Instagram</h6>
-                                                <h6 class="flex-shrink-0 mb-0">18k</h6>
-                                            </div>
-                                            <div class="d-flex gap-2 align-items-center mb-2">
-                                                <div class="avatar-xs flex-shrink-0">
-                                                    <div class="avatar-title bg-info-subtle text-info rounded-2 fs-17">
-                                                        <i class="ri-telegram-2-line"></i>
-                                                    </div>
-                                                </div>
-                                                <h6 class="mb-0 fs-14 flex-grow-1">Telegram</h6>
-                                                <h6 class="flex-shrink-0 mb-0">26k</h6>
-                                            </div>
-                                            <div class="d-flex gap-2 align-items-center">
-                                                <div class="avatar-xs flex-shrink-0">
-                                                    <div class="avatar-title bg-secondary-subtle text-secondary rounded-2 fs-17">
-                                                        <i class="ri-youtube-line"></i>
-                                                    </div>
-                                                </div>
-                                                <h6 class="mb-0 fs-14 flex-grow-1">YouTube</h6>
-                                                <h6 class="flex-shrink-0 mb-0">9k</h6>
+
                                             </div>
                                         </div>
                                     </div>
                                 </div>
-                            </div><!--end row-->
-                        </div><!--end col-->
+                                <!-- end card -->
+                            </div>
+                            <!-- end col -->
+                        </div>
+                        <!-- end row-->
+
+                        <div class="col-xl-4">
+                            <!-- card -->
+                            <div class="card">
+                                <!-- card body -->
+                                <div class="card-body">
+                                    <div class="d-flex flex-wrap align-items-center mb-4">
+                                        <h5 class="card-title me-2">Sales by Locations</h5>
+                                        <div class="ms-auto">
+                                            <div class="dropdown">
+                                                <a class="dropdown-toggle text-reset" href="#" id="dropdownMenuButton1"
+                                                    data-bs-toggle="dropdown" aria-haspopup="true"
+                                                    aria-expanded="false">
+                                                    <span class="text-muted font-size-12">Sort By:</span> <span
+                                                        class="fw-medium">World<i
+                                                            class="mdi mdi-chevron-down ms-1"></i></span>
+                                                </a>
+
+                                                <div class="dropdown-menu dropdown-menu-end"
+                                                    aria-labelledby="dropdownMenuButton1">
+                                                    <a class="dropdown-item" href="#">USA</a>
+                                                    <a class="dropdown-item" href="#">Russia</a>
+                                                    <a class="dropdown-item" href="#">Australia</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div id="sales-by-locations" data-colors='["--bs-success"]' style="height: 253px">
+                                    </div>
+
+                                    <div class="px-2 py-2">
+                                        <p class="mb-1">USA <span class="float-end">75%</span></p>
+                                        <div class="progress mt-2" style="height: 6px;">
+                                            <div class="progress-bar progress-bar-striped bg-primary" role="progressbar"
+                                                style="width: 75%" aria-valuenow="75" aria-valuemin="0"
+                                                aria-valuemax="75">
+                                            </div>
+                                        </div>
+
+                                        <p class="mt-3 mb-1">Russia <span class="float-end">55%</span></p>
+                                        <div class="progress mt-2" style="height: 6px;">
+                                            <div class="progress-bar progress-bar-striped bg-primary" role="progressbar"
+                                                style="width: 55%" aria-valuenow="55" aria-valuemin="0"
+                                                aria-valuemax="55">
+                                            </div>
+                                        </div>
+
+                                        <p class="mt-3 mb-1">Australia <span class="float-end">85%</span></p>
+                                        <div class="progress mt-2" style="height: 6px;">
+                                            <div class="progress-bar progress-bar-striped bg-primary" role="progressbar"
+                                                style="width: 85%" aria-valuenow="85" aria-valuemin="0"
+                                                aria-valuemax="85">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- end card body -->
+                            </div>
+                            <!-- end card -->
+                        </div>
+                        <!-- end col -->
+                    </div>
+                    <!-- end row-->
+
+                    <div class="row">
                         <div class="col-xl-3">
                             <div class="card">
                                 <div class="card-header align-items-center d-flex">
-                                    <h4 class="card-title mb-0 flex-grow-1">Recent Comment</h4>
+                                    <h4 class="card-title mb-0 flex-grow-1">Customer List</h4>
                                     <div class="flex-shrink-0">
-                                        <button type="button" class="btn btn-soft-primary btn-sm">
-                                            View All
-                                        </button>
+                                        <div class="dropdown">
+                                            <a class=" dropdown-toggle" href="#" id="dropdownMenuButton2"
+                                                data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                                <span class="text-muted">All Members<i
+                                                        class="mdi mdi-chevron-down ms-1"></i></span>
+                                            </a>
+
+                                            <div class="dropdown-menu dropdown-menu-end"
+                                                aria-labelledby="dropdownMenuButton2">
+                                                <a class="dropdown-item" href="#">Members</a>
+                                                <a class="dropdown-item" href="#">New Members</a>
+                                                <a class="dropdown-item" href="#">Old Members</a>
+                                            </div>
+                                        </div>
                                     </div>
-                                </div>
-                                <div class="card-body">
-                                    <div data-simplebar class="mx-n3 px-3" style="height: 375px;">
-                                        <div class="vstack gap-3">
-                                            <div class="d-flex gap-3">
-                                                <img src="themeadmin/velzon/assets/images/users/avatar-3.jpg" alt="" class="avatar-sm rounded flex-shrink-0">
-                                                <div class="flex-shrink-1">
-                                                    <h6 class="mb-2">Diana Kohler <span class="text-muted">Has commented</span></h6>
-                                                    <p class="text-muted mb-0">" Really well-written and informative. The emotional connection strategy is something I’ll be testing out more! "</p>
+                                </div><!-- end card header -->
+
+                                <div class="card-body px-0">
+                                    <div class="px-3" data-simplebar style="max-height: 386px;">
+                                        <div class="d-flex align-items-center pb-4">
+                                            <div class="avatar-md me-4">
+                                                <img src="theme-admin/dason/assets/images/users/avatar-2.jpg"
+                                                    class="img-fluid rounded-circle" alt="">
+                                            </div>
+                                            <div class="flex-grow-1">
+                                                <h5 class="font-size-15 mb-1"><a href="#" class="text-dark">Randy
+                                                        Matthews</a></h5>
+                                                <span class="text-muted">Randy@gmail.com</span>
+                                            </div>
+                                            <div class="flex-shrink-0 text-end">
+                                                <div class="dropdown align-self-start">
+                                                    <a class="dropdown-toggle" href="#" role="button"
+                                                        data-bs-toggle="dropdown" aria-haspopup="true"
+                                                        aria-expanded="false">
+                                                        <i
+                                                            class="bx bx-dots-vertical-rounded font-size-24 text-dark"></i>
+                                                    </a>
+                                                    <div class="dropdown-menu">
+                                                        <a class="dropdown-item" href="#">Copy</a>
+                                                        <a class="dropdown-item" href="#">Save</a>
+                                                        <a class="dropdown-item" href="#">Forward</a>
+                                                        <a class="dropdown-item" href="#">Delete</a>
+                                                    </div>
                                                 </div>
                                             </div>
-                                            <div class="d-flex gap-3">
-                                                <img src="themeadmin/velzon/assets/images/users/avatar-5.jpg" alt="" class="avatar-sm rounded flex-shrink-0">
-                                                <div class="flex-shrink-1">
-                                                    <h6 class="mb-2">Tonya Noble <span class="text-muted">Has commented</span></h6>
-                                                    <p class="text-muted mb-0">" Incredibly helpful tips, especially about adding a call to action. I’ve been missing that step and will implement it in my next post! "</p>
+                                        </div>
+
+                                        <div class="d-flex align-items-center pb-4">
+                                            <div class="avatar-md me-4">
+                                                <img src="theme-admin/dason/assets/images/users/avatar-4.jpg"
+                                                    class="img-fluid rounded-circle" alt="">
+                                            </div>
+                                            <div class="flex-grow-1">
+                                                <h5 class="font-size-15 mb-1"><a href="#" class="text-dark">Vernon
+                                                        Wood</a></h5>
+                                                <span class="text-muted">Vernon@gmail.com</span>
+                                            </div>
+                                            <div class="flex-shrink-0 text-end">
+                                                <div class="dropdown align-self-start">
+                                                    <a class="dropdown-toggle" href="#" role="button"
+                                                        data-bs-toggle="dropdown" aria-haspopup="true"
+                                                        aria-expanded="false">
+                                                        <i
+                                                            class="bx bx-dots-vertical-rounded font-size-24 text-dark"></i>
+                                                    </a>
+                                                    <div class="dropdown-menu">
+                                                        <a class="dropdown-item" href="#">Copy</a>
+                                                        <a class="dropdown-item" href="#">Save</a>
+                                                        <a class="dropdown-item" href="#">Forward</a>
+                                                        <a class="dropdown-item" href="#">Delete</a>
+                                                    </div>
                                                 </div>
                                             </div>
-                                            <div class="d-flex gap-3">
-                                                <img src="themeadmin/velzon/assets/images/users/avatar-6.jpg" alt="" class="avatar-sm rounded flex-shrink-0">
-                                                <div class="flex-shrink-1">
-                                                    <h6 class="mb-2">Donald Palmer <span class="text-muted">Has commented</span></h6>
-                                                    <p class="text-muted mb-0">" Fantastic read! The power of visuals and trends really stood out to me. Thanks for sharing these useful insights! "</p>
+                                        </div>
+
+                                        <div class="d-flex align-items-center pb-4">
+                                            <div class="avatar-md me-4">
+                                                <img src="theme-admin/dason/assets/images/users/avatar-5.jpg"
+                                                    class="img-fluid rounded-circle" alt="">
+                                            </div>
+                                            <div class="flex-grow-1">
+                                                <h5 class="font-size-15 mb-1"><a href="#" class="text-dark">Howard
+                                                        Rhoades</a></h5>
+                                                <span class="text-muted">Howard@gmail.com</span>
+                                            </div>
+                                            <div class="flex-shrink-0 text-end">
+                                                <div class="dropdown align-self-start">
+                                                    <a class="dropdown-toggle" href="#" role="button"
+                                                        data-bs-toggle="dropdown" aria-haspopup="true"
+                                                        aria-expanded="false">
+                                                        <i
+                                                            class="bx bx-dots-vertical-rounded font-size-24 text-dark"></i>
+                                                    </a>
+                                                    <div class="dropdown-menu">
+                                                        <a class="dropdown-item" href="#">Copy</a>
+                                                        <a class="dropdown-item" href="#">Save</a>
+                                                        <a class="dropdown-item" href="#">Forward</a>
+                                                        <a class="dropdown-item" href="#">Delete</a>
+                                                    </div>
                                                 </div>
                                             </div>
-                                            <div class="d-flex gap-3">
-                                                <img src="themeadmin/velzon/assets/images/users/avatar-7.jpg" alt="" class="avatar-sm rounded flex-shrink-0">
-                                                <div class="flex-shrink-1">
-                                                    <h6 class="mb-2">Joseph Parker <span class="text-muted">Has commented</span></h6>
-                                                    <p class="text-muted mb-0">" Great post! Simple yet powerful tips that I can start using immediately. Thanks for sharing your expertise! "</p>
+                                        </div>
+
+                                        <div class="d-flex align-items-center pb-4">
+                                            <div class="avatar-md me-4">
+                                                <img src="theme-admin/dason/assets/images/users/avatar-6.jpg"
+                                                    class="img-fluid rounded-circle" alt="">
+                                            </div>
+                                            <div class="flex-grow-1">
+                                                <h5 class="font-size-15 mb-1"><a href="#" class="text-dark">Arthur
+                                                        Zurcher</a></h5>
+                                                <span class="text-muted">Arthur@gmail.com</span>
+                                            </div>
+                                            <div class="flex-shrink-0 text-end">
+                                                <div class="dropdown align-self-start">
+                                                    <a class="dropdown-toggle" href="#" role="button"
+                                                        data-bs-toggle="dropdown" aria-haspopup="true"
+                                                        aria-expanded="false">
+                                                        <i
+                                                            class="bx bx-dots-vertical-rounded font-size-24 text-dark"></i>
+                                                    </a>
+                                                    <div class="dropdown-menu">
+                                                        <a class="dropdown-item" href="#">Copy</a>
+                                                        <a class="dropdown-item" href="#">Save</a>
+                                                        <a class="dropdown-item" href="#">Forward</a>
+                                                        <a class="dropdown-item" href="#">Delete</a>
+                                                    </div>
                                                 </div>
                                             </div>
-                                            <div class="d-flex gap-3">
-                                                <img src="themeadmin/velzon/assets/images/users/avatar-9.jpg" alt="" class="avatar-sm rounded flex-shrink-0">
-                                                <div class="flex-shrink-1">
-                                                    <h6 class="mb-2">Timothy Smith <span class="text-muted">Has commented</span></h6>
-                                                    <p class="text-muted mb-0">" Wow, this has opened my eyes to a new perspective on creating content. Emotional triggers—such a smart way to engage users! "</p>
+                                        </div>
+
+                                        <div class="d-flex align-items-center pb-4">
+                                            <div class="avatar-md me-4">
+                                                <img src="theme-admin/dason/assets/images/users/avatar-8.jpg"
+                                                    class="img-fluid rounded-circle" alt="">
+                                            </div>
+                                            <div class="flex-grow-1">
+                                                <h5 class="font-size-15 mb-1"><a href="#" class="text-dark">Angela
+                                                        Palmer</a></h5>
+                                                <span class="text-muted">Angela@gmail.com</span>
+                                            </div>
+                                            <div class="flex-shrink-0 text-end">
+                                                <div class="dropdown align-self-start">
+                                                    <a class="dropdown-toggle" href="#" role="button"
+                                                        data-bs-toggle="dropdown" aria-haspopup="true"
+                                                        aria-expanded="false">
+                                                        <i
+                                                            class="bx bx-dots-vertical-rounded font-size-24 text-dark"></i>
+                                                    </a>
+                                                    <div class="dropdown-menu">
+                                                        <a class="dropdown-item" href="#">Copy</a>
+                                                        <a class="dropdown-item" href="#">Save</a>
+                                                        <a class="dropdown-item" href="#">Forward</a>
+                                                        <a class="dropdown-item" href="#">Delete</a>
+                                                    </div>
                                                 </div>
                                             </div>
-                                            <div class="d-flex gap-3">
-                                                <img src="themeadmin/velzon/assets/images/users/avatar-10.jpg" alt="" class="avatar-sm rounded flex-shrink-0">
-                                                <div class="flex-shrink-1">
-                                                    <h6 class="mb-2">Alexis Clarke <span class="text-muted">Has commented</span></h6>
-                                                    <p class="text-muted mb-0">" Fantastic read! The power of visuals and trends really stood out to me. Thanks for sharing these useful insights! "</p>
-                                                </div>
+                                        </div>
+
+                                        <div class="d-flex align-items-center pb-3">
+                                            <div class="avatar-md me-4">
+                                                <img src="theme-admin/dason/assets/images/users/avatar-9.jpg"
+                                                    class="img-fluid rounded-circle" alt="">
                                             </div>
-                                            <div class="d-flex gap-3">
-                                                <img src="themeadmin/velzon/assets/images/users/avatar-2.jpg" alt="" class="avatar-sm rounded flex-shrink-0">
-                                                <div class="flex-shrink-1">
-                                                    <h6 class="mb-2">Thomas Taylor <span class="text-muted">Has commented</span></h6>
-                                                    <p class="text-muted mb-0">" Loved the section on visual storytelling. It’s true that images speak louder on social media platforms. More visuals in my next posts for sure! "</p>
+                                            <div class="flex-grow-1">
+                                                <h5 class="font-size-15 mb-1"><a href="#" class="text-dark">Dorothy
+                                                        Wimson</a></h5>
+                                                <span class="text-muted">Dorothy@gmail.com</span>
+                                            </div>
+                                            <div class="flex-shrink-0 text-end">
+                                                <div class="dropdown align-self-start">
+                                                    <a class="dropdown-toggle" href="#" role="button"
+                                                        data-bs-toggle="dropdown" aria-haspopup="true"
+                                                        aria-expanded="false">
+                                                        <i
+                                                            class="bx bx-dots-vertical-rounded font-size-24 text-dark"></i>
+                                                    </a>
+                                                    <div class="dropdown-menu">
+                                                        <a class="dropdown-item" href="#">Copy</a>
+                                                        <a class="dropdown-item" href="#">Save</a>
+                                                        <a class="dropdown-item" href="#">Forward</a>
+                                                        <a class="dropdown-item" href="#">Delete</a>
+                                                    </div>
                                                 </div>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
+                                <!-- end card body -->
                             </div>
+                            <!-- end card -->
                         </div>
-                        <div class="col-xl-8">
+                        <!-- end col -->
+
+                        <div class="col-xl-5">
                             <div class="card">
                                 <div class="card-header align-items-center d-flex">
-                                    <h4 class="card-title mb-0 flex-grow-1">Recent Article</h4>
+                                    <h4 class="card-title mb-0 flex-grow-1">Selling Products</h4>
                                     <div class="flex-shrink-0">
-                                        <div class="dropdown card-header-dropdown">
-                                            <a class="text-reset dropdown-btn" href="#" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                                <span class="fw-semibold text-uppercase fs-12">Sort by: </span><span class="text-muted">Popular <i class="mdi mdi-chevron-down ms-1"></i></span>
+                                        <div class="dropdown align-self-start">
+                                            <a class="dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                                                aria-haspopup="true" aria-expanded="false">
+                                                <i class="bx bx-dots-horizontal-rounded font-size-18 text-dark"></i>
                                             </a>
-                                            <div class="dropdown-menu dropdown-menu-end">
-                                                <a class="dropdown-item" href="#">Popular</a>
-                                                <a class="dropdown-item" href="#">Newest</a>
-                                                <a class="dropdown-item" href="#">Oldest</a>
+                                            <div class="dropdown-menu">
+                                                <a class="dropdown-item" href="#">Copy</a>
+                                                <a class="dropdown-item" href="#">Save</a>
+                                                <a class="dropdown-item" href="#">Forward</a>
+                                                <a class="dropdown-item" href="#">Delete</a>
                                             </div>
                                         </div>
                                     </div>
-                                </div>
-                                <div class="card-body">
-                                    <div class="table-responsive table-card">
-                                        <table class="table table-hover table-nowrap align-middle mb-0">
-                                            <thead class="table-light">
-                                                <tr class="text-muted">
-                                                    <th scope="col">No</th>
-                                                    <th scope="col">Blog Title</th>
-                                                    <th scope="col">Post Date</th>
-                                                    <th scope="col">Category</th>
-                                                    <th scope="col">Comment</th>
-                                                    <th scope="col">Like</th>
-                                                    <th scope="col">Shared</th>
-                                                    <th scope="col">Viewers</th>
-                                                </tr>
-                                            </thead>
 
+                                </div><!-- end card header -->
+
+                                <div class="card-body px-0 pt-2">
+                                    <div class="table-responsive px-3" data-simplebar style="max-height: 395px;">
+                                        <table class="table align-middle table-nowrap">
                                             <tbody>
                                                 <tr>
-                                                    <td>01</td>
-                                                    <td>
-                                                        <img src="themeadmin/velzon/assets/images/blog/img-2.jpg" alt="" class="me-2 rounded" height="40">
-                                                        <a href="#!" class="text-body fw-medium">The Evolution of Minimalism in Design</a>
+                                                    <td style="width: 50px;">
+                                                        <div class="avatar-md me-4">
+                                                            <img src="theme-admin/dason/assets/images/product/img-1.png"
+                                                                class="img-fluid" alt="">
+                                                        </div>
                                                     </td>
-                                                    <td>20 Sep, 2024</td>
-                                                    <td><span class="badge bg-success-subtle text-success p-2">MinimalDesign</span></td>
-                                                    <td>23</td>
-                                                    <td>157</td>
-                                                    <td>11</td>
-                                                    <td>2149</td>
+
+                                                    <td>
+                                                        <div>
+                                                            <h5 class="font-size-15"><a href="#" class="text-dark">Half
+                                                                    sleeve T-shirt</a></h5>
+                                                            <span class="text-muted">$240.00</span>
+                                                        </div>
+                                                    </td>
+
+                                                    <td>
+                                                        <p class="mb-1"><a href="#" class="text-dark">Available</a></p>
+                                                        <span class="text-muted">243K</span>
+                                                    </td>
+
+                                                    <td>
+                                                        <div class="text-end">
+                                                            <ul class="mb-1 ps-0">
+                                                                <li class="bx bxs-star text-warning"></li>
+                                                                <li class="bx bxs-star text-warning"></li>
+                                                                <li class="bx bxs-star text-warning"></li>
+                                                                <li class="bx bxs-star text-warning"></li>
+                                                                <li class="bx bxs-star text-warning"></li>
+                                                            </ul>
+                                                            <span class="text-muted mt-1">145 Sales</span>
+                                                        </div>
+                                                    </td>
                                                 </tr>
+
                                                 <tr>
-                                                    <td>02</td>
-                                                    <td>
-                                                        <img src="themeadmin/velzon/assets/images/blog/img-3.jpg" alt="" class="me-2 rounded" height="40">
-                                                        <a href="#!" class="text-body fw-medium">Mastering User Experience Through Storytelling</a>
+                                                    <td style="width: 50px;">
+                                                        <div class="avatar-md me-4">
+                                                            <img src="theme-admin/dason/assets/images/product/img-2.png"
+                                                                class="img-fluid" alt="">
+                                                        </div>
                                                     </td>
-                                                    <td>11 Feb, 2024</td>
-                                                    <td><span class="badge bg-success-subtle text-success p-2">UXDesign</span></td>
-                                                    <td>547</td>
-                                                    <td>1458</td>
-                                                    <td>317</td>
-                                                    <td>34978</td>
+
+                                                    <td>
+                                                        <div>
+                                                            <h5 class="font-size-15"><a href="#" class="text-dark">Light
+                                                                    blue T-shirt</a></h5>
+                                                            <span class="text-muted">$650.00</span>
+                                                        </div>
+                                                    </td>
+
+                                                    <td>
+                                                        <p class="mb-1"><a href="#" class="text-dark">Out Of
+                                                                Stock</a></p>
+                                                        <span class="text-muted">1,253K</span>
+                                                    </td>
+
+                                                    <td>
+                                                        <div class="text-end">
+                                                            <ul class="mb-1 ps-0">
+                                                                <li class="bx bxs-star text-warning"></li>
+                                                                <li class="bx bxs-star text-warning"></li>
+                                                                <li class="bx bxs-star text-warning"></li>
+                                                                <li class="bx bxs-star text-warning"></li>
+                                                                <li class="bx bx-star text-warning"></li>
+                                                            </ul>
+                                                            <span class="text-muted mt-1">260 Sales</span>
+                                                        </div>
+                                                    </td>
                                                 </tr>
+
                                                 <tr>
-                                                    <td>03</td>
-                                                    <td>
-                                                        <img src="themeadmin/velzon/assets/images/blog/img-4.jpg" alt="" class="me-2 rounded" height="40">
-                                                        <a href="#!" class="text-body fw-medium">Designing for Purpose: A Mindful Approach</a>
+                                                    <td style="width: 50px;">
+                                                        <div class="avatar-md me-4">
+                                                            <img src="theme-admin/dason/assets/images/product/img-3.png"
+                                                                class="img-fluid" alt="">
+                                                        </div>
                                                     </td>
-                                                    <td>15 Sep, 2024</td>
-                                                    <td><span class="badge bg-success-subtle text-success p-2">CreativeProcess</span></td>
-                                                    <td>88</td>
-                                                    <td>649</td>
-                                                    <td>237</td>
-                                                    <td>1982</td>
+
+                                                    <td>
+                                                        <div>
+                                                            <h5 class="font-size-15"><a href="#" class="text-dark">Black
+                                                                    Color T-shirt</a></h5>
+                                                            <span class="text-muted">$325.00</span>
+                                                        </div>
+                                                    </td>
+
+                                                    <td>
+                                                        <p class="mb-1"><a href="#" class="text-dark">Available</a></p>
+                                                        <span class="text-muted">2,586K</span>
+                                                    </td>
+
+                                                    <td>
+                                                        <div class="text-end">
+                                                            <ul class="mb-1 ps-0">
+                                                                <li class="bx bxs-star text-warning"></li>
+                                                                <li class="bx bxs-star text-warning"></li>
+                                                                <li class="bx bxs-star text-warning"></li>
+                                                                <li class="bx bxs-star text-warning"></li>
+                                                                <li class="bx bxs-star text-warning"></li>
+                                                            </ul>
+                                                            <span class="text-muted mt-1">220 Sales</span>
+                                                        </div>
+                                                    </td>
                                                 </tr>
+
                                                 <tr>
-                                                    <td>04</td>
-                                                    <td>
-                                                        <img src="themeadmin/velzon/assets/images/blog/img-5.jpg" alt="" class="me-2 rounded" height="40">
-                                                        <a href="#!" class="text-body fw-medium">How to Overcome Creative Block</a>
+                                                    <td style="width: 50px;">
+                                                        <div class="avatar-md me-4">
+                                                            <img src="theme-admin/dason/assets/images/product/img-4.png"
+                                                                class="img-fluid" alt="">
+                                                        </div>
                                                     </td>
-                                                    <td>09 July, 2024</td>
-                                                    <td><span class="badge bg-success-subtle text-success p-2">CreativeBlock</span></td>
-                                                    <td>67</td>
-                                                    <td>1114</td>
-                                                    <td>1547</td>
-                                                    <td>15747</td>
+
+                                                    <td>
+                                                        <div>
+                                                            <h5 class="font-size-15"><a href="#"
+                                                                    class="text-dark"></a>Hoodie (Blue)</h5>
+                                                            <span class="text-muted">$170.00</span>
+                                                        </div>
+                                                    </td>
+
+                                                    <td>
+                                                        <p class="mb-1"><a href="#" class="text-dark">Available</a></p>
+                                                        <span class="text-muted">4,565K</span>
+                                                    </td>
+
+                                                    <td>
+                                                        <div class="text-end">
+                                                            <ul class="mb-1 ps-0">
+                                                                <li class="bx bxs-star text-warning"></li>
+                                                                <li class="bx bxs-star text-warning"></li>
+                                                                <li class="bx bxs-star text-warning"></li>
+                                                                <li class="bx bxs-star text-warning"></li>
+                                                                <li class="bx bxs-star text-warning"></li>
+                                                            </ul>
+                                                            <span class="text-muted mt-1">165 Sales</span>
+                                                        </div>
+                                                    </td>
                                                 </tr>
+
                                                 <tr>
-                                                    <td>05</td>
-                                                    <td>
-                                                        <img src="themeadmin/velzon/assets/images/blog/img-6.jpg" alt="" class="me-2 rounded" height="40">
-                                                        <a href="#!" class="text-body fw-medium">Building Brand Identity through Design</a>
+                                                    <td style="width: 50px;">
+                                                        <div class="avatar-md me-4">
+                                                            <img src="theme-admin/dason/assets/images/product/img-5.png"
+                                                                class="img-fluid" alt="">
+                                                        </div>
                                                     </td>
-                                                    <td>19 Nov, 2024</td>
-                                                    <td><span class="badge bg-success-subtle text-success p-2">BrandDesign</span></td>
-                                                    <td>8</td>
-                                                    <td>10</td>
-                                                    <td>7</td>
-                                                    <td>110</td>
+
+                                                    <td>
+                                                        <div>
+                                                            <h5 class="font-size-15"><a href="#"
+                                                                    class="text-dark"></a>Half sleeve T-Shirt</h5>
+                                                            <span class="text-muted">$150.00</span>
+                                                        </div>
+                                                    </td>
+
+                                                    <td>
+                                                        <p class="mb-1"><a href="#" class="text-dark">Out Of
+                                                                Stock</a></p>
+                                                        <span class="text-muted">5,265K</span>
+                                                    </td>
+
+                                                    <td>
+                                                        <div class="text-end">
+                                                            <ul class="mb-1 ps-0">
+                                                                <li class="bx bxs-star text-warning"></li>
+                                                                <li class="bx bxs-star text-warning"></li>
+                                                                <li class="bx bxs-star text-warning"></li>
+                                                                <li class="bx bxs-star text-warning"></li>
+                                                                <li class="bx bx-star text-warning"></li>
+                                                            </ul>
+                                                            <span class="text-muted mt-1">165 Sales</span>
+                                                        </div>
+                                                    </td>
                                                 </tr>
-                                            </tbody><!-- end tbody -->
-                                        </table><!-- end table -->
+
+                                                <tr>
+                                                    <td style="width: 50px;">
+                                                        <div class="avatar-md me-4">
+                                                            <img src="theme-admin/dason/assets/images/product/img-6.png"
+                                                                class="img-fluid" alt="">
+                                                        </div>
+                                                    </td>
+
+                                                    <td>
+                                                        <div>
+                                                            <h5 class="font-size-15"><a href="#"
+                                                                    class="text-dark"></a>Green color T-shirt</h5>
+                                                            <span class="text-muted">$120.00</span>
+                                                        </div>
+                                                    </td>
+
+                                                    <td>
+                                                        <p class="mb-1"><a href="#" class="text-dark">Available</a></p>
+                                                        <span class="text-muted">125K</span>
+                                                    </td>
+
+                                                    <td>
+                                                        <div class="text-end">
+                                                            <ul class="mb-1 ps-0">
+                                                                <li class="bx bxs-star text-warning"></li>
+                                                                <li class="bx bxs-star text-warning"></li>
+                                                                <li class="bx bxs-star text-warning"></li>
+                                                                <li class="bx bxs-star text-warning"></li>
+                                                                <li class="bx bx-star text-warning"></li>
+                                                            </ul>
+                                                            <span class="text-muted mt-1">165 Sales</span>
+                                                        </div>
+                                                    </td>
+                                                </tr>
+
+                                            </tbody>
+                                        </table>
                                     </div>
-                                    <div class="align-items-center mt-3 row g-3 text-center text-sm-start">
-                                        <div class="col-sm">
-                                            <div class="text-muted">Showing <span class="fw-semibold">5</span> of <span class="fw-semibold">14</span> Results
+                                </div>
+                                <!-- end card body -->
+                            </div>
+                            <!-- end card -->
+                        </div>
+                        <!-- end col -->
+
+                        <div class="col-xl-4">
+                            <div class="card">
+                                <div class="card-header align-items-center d-flex">
+                                    <h4 class="card-title mb-0 flex-grow-1">Chat</h4>
+                                    <div class="flex-shrink-0">
+                                        <select class="form-select form-select-sm mb-0 my-n1">
+                                            <option value="Today" selected="">Today</option>
+                                            <option value="Yesterday">Yesterday</option>
+                                            <option value="Week">Last Week</option>
+                                            <option value="Month">Last Month</option>
+                                        </select>
+                                    </div>
+                                </div><!-- end card header -->
+
+                                <div class="card-body px-0">
+                                    <div class="px-3 chat-conversation" data-simplebar style="max-height: 350px;">
+                                        <ul class="list-unstyled mb-0">
+                                            <li class="chat-day-title">
+                                                <span class="title">Today</span>
+                                            </li>
+                                            <li>
+                                                <div class="conversation-list">
+                                                    <div class="d-flex">
+                                                        <img src="theme-admin/dason/assets/images/users/avatar-3.jpg"
+                                                            class="rounded-circle avatar-sm" alt="">
+                                                        <div class="flex-1">
+                                                            <div class="ctext-wrap">
+                                                                <div class="ctext-wrap-content">
+                                                                    <div class="conversation-name"><span
+                                                                            class="time">10:00 AM</span></div>
+                                                                    <p class="mb-0">Good Morning</p>
+                                                                </div>
+                                                                <div class="dropdown align-self-start">
+                                                                    <a class="dropdown-toggle" href="#" role="button"
+                                                                        data-bs-toggle="dropdown" aria-haspopup="true"
+                                                                        aria-expanded="false">
+                                                                        <i class="bx bx-dots-vertical-rounded"></i>
+                                                                    </a>
+                                                                    <div class="dropdown-menu">
+                                                                        <a class="dropdown-item" href="#">Copy</a>
+                                                                        <a class="dropdown-item" href="#">Save</a>
+                                                                        <a class="dropdown-item" href="#">Forward</a>
+                                                                        <a class="dropdown-item" href="#">Delete</a>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                            </li>
+
+                                            <li class="right">
+                                                <div class="conversation-list">
+                                                    <div class="d-flex">
+                                                        <div class="flex-1">
+                                                            <div class="ctext-wrap">
+                                                                <div class="ctext-wrap-content">
+                                                                    <div class="conversation-name"><span
+                                                                            class="time">10:02 AM</span></div>
+                                                                    <p class="mb-0">Good morning</p>
+                                                                </div>
+                                                                <div class="dropdown align-self-start">
+                                                                    <a class="dropdown-toggle" href="#" role="button"
+                                                                        data-bs-toggle="dropdown" aria-haspopup="true"
+                                                                        aria-expanded="false">
+                                                                        <i class="bx bx-dots-vertical-rounded"></i>
+                                                                    </a>
+                                                                    <div class="dropdown-menu">
+                                                                        <a class="dropdown-item" href="#">Copy</a>
+                                                                        <a class="dropdown-item" href="#">Save</a>
+                                                                        <a class="dropdown-item" href="#">Forward</a>
+                                                                        <a class="dropdown-item" href="#">Delete</a>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <img src="theme-admin/dason/assets/images/users/avatar-6.jpg"
+                                                            class="rounded-circle avatar-sm" alt="">
+                                                    </div>
+
+                                                </div>
+
+                                            </li>
+
+                                            <li>
+                                                <div class="conversation-list">
+                                                    <div class="d-flex">
+                                                        <img src="theme-admin/dason/assets/images/users/avatar-3.jpg"
+                                                            class="rounded-circle avatar-sm" alt="">
+                                                        <div class="flex-1">
+                                                            <div class="ctext-wrap">
+                                                                <div class="ctext-wrap-content">
+                                                                    <div class="conversation-name"><span
+                                                                            class="time">10:04 AM</span></div>
+                                                                    <p class="mb-0">
+                                                                        Hi there, How are you?
+                                                                    </p>
+                                                                </div>
+                                                                <div class="dropdown align-self-start">
+                                                                    <a class="dropdown-toggle" href="#" role="button"
+                                                                        data-bs-toggle="dropdown" aria-haspopup="true"
+                                                                        aria-expanded="false">
+                                                                        <i class="bx bx-dots-vertical-rounded"></i>
+                                                                    </a>
+                                                                    <div class="dropdown-menu">
+                                                                        <a class="dropdown-item" href="#">Copy</a>
+                                                                        <a class="dropdown-item" href="#">Save</a>
+                                                                        <a class="dropdown-item" href="#">Forward</a>
+                                                                        <a class="dropdown-item" href="#">Delete</a>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="d-flex">
+                                                        <img src="theme-admin/dason/assets/images/users/avatar-3.jpg"
+                                                            class="rounded-circle avatar-sm" alt="">
+                                                        <div class="flex-1">
+                                                            <div class="ctext-wrap">
+                                                                <div class="ctext-wrap-content">
+                                                                    <div class="conversation-name"><span
+                                                                            class="time">10:04 AM</span></div>
+                                                                    <p class="mb-0">
+                                                                        Waiting for your reply.As I heve to go back
+                                                                        soon. i have to travel long distance.
+                                                                    </p>
+                                                                </div>
+                                                                <div class="dropdown align-self-start">
+                                                                    <a class="dropdown-toggle" href="#" role="button"
+                                                                        data-bs-toggle="dropdown" aria-haspopup="true"
+                                                                        aria-expanded="false">
+                                                                        <i class="bx bx-dots-vertical-rounded"></i>
+                                                                    </a>
+                                                                    <div class="dropdown-menu">
+                                                                        <a class="dropdown-item" href="#">Copy</a>
+                                                                        <a class="dropdown-item" href="#">Save</a>
+                                                                        <a class="dropdown-item" href="#">Forward</a>
+                                                                        <a class="dropdown-item" href="#">Delete</a>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                            </li>
+
+                                            <li class="right">
+                                                <div class="conversation-list">
+                                                    <div class="d-flex">
+                                                        <div class="flex-1">
+                                                            <div class="ctext-wrap">
+                                                                <div class="ctext-wrap-content">
+                                                                    <div class="conversation-name"><span
+                                                                            class="time">10:08 AM</span></div>
+                                                                    <p class="mb-0">
+                                                                        Hi, I am coming there in few minutes. Please
+                                                                        wait!! I am in taxi right now.
+                                                                    </p>
+                                                                </div>
+                                                                <div class="dropdown align-self-start">
+                                                                    <a class="dropdown-toggle" href="#" role="button"
+                                                                        data-bs-toggle="dropdown" aria-haspopup="true"
+                                                                        aria-expanded="false">
+                                                                        <i class="bx bx-dots-vertical-rounded"></i>
+                                                                    </a>
+                                                                    <div class="dropdown-menu">
+                                                                        <a class="dropdown-item" href="#">Copy</a>
+                                                                        <a class="dropdown-item" href="#">Save</a>
+                                                                        <a class="dropdown-item" href="#">Forward</a>
+                                                                        <a class="dropdown-item" href="#">Delete</a>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <img src="theme-admin/dason/assets/images/users/avatar-6.jpg"
+                                                            class="rounded-circle avatar-sm" alt="">
+                                                    </div>
+                                                </div>
+
+                                            </li>
+
+                                            <li>
+                                                <div class="conversation-list">
+                                                    <div class="d-flex">
+                                                        <img src="theme-admin/dason/assets/images/users/avatar-3.jpg"
+                                                            class="rounded-circle avatar-sm" alt="">
+                                                        <div class="flex-1">
+                                                            <div class="ctext-wrap">
+                                                                <div class="ctext-wrap-content">
+                                                                    <div class="conversation-name"><span
+                                                                            class="time">10:06 AM</span></div>
+                                                                    <p class="mb-0">
+                                                                        Thank You very much, I am waiting here at
+                                                                        StarBuck cafe.
+                                                                    </p>
+                                                                </div>
+                                                                <div class="dropdown align-self-start">
+                                                                    <a class="dropdown-toggle" href="#" role="button"
+                                                                        data-bs-toggle="dropdown" aria-haspopup="true"
+                                                                        aria-expanded="false">
+                                                                        <i class="bx bx-dots-vertical-rounded"></i>
+                                                                    </a>
+                                                                    <div class="dropdown-menu">
+                                                                        <a class="dropdown-item" href="#">Copy</a>
+                                                                        <a class="dropdown-item" href="#">Save</a>
+                                                                        <a class="dropdown-item" href="#">Forward</a>
+                                                                        <a class="dropdown-item" href="#">Delete</a>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                            </li>
+
+
+                                            <li>
+                                                <div class="conversation-list">
+                                                    <div class="d-flex">
+                                                        <img src="theme-admin/dason/assets/images/users/avatar-3.jpg"
+                                                            class="rounded-circle avatar-sm" alt="">
+                                                        <div class="flex-1">
+                                                            <div class="ctext-wrap">
+                                                                <div class="ctext-wrap-content">
+                                                                    <div class="conversation-name"><span
+                                                                            class="time">10:09 AM</span></div>
+                                                                    <p class="mb-0">
+                                                                        img-1.jpg & img-2.jpg images for a New Projects
+                                                                    </p>
+
+                                                                    <ul class="list-inline message-img mt-3  mb-0">
+                                                                        <li class="list-inline-item message-img-list">
+                                                                            <a class="d-inline-block m-1" href="#">
+                                                                                <img src="theme-admin/dason/assets/images/small/img-1.jpg"
+                                                                                    alt=""
+                                                                                    class="rounded img-thumbnail">
+                                                                            </a>
+                                                                        </li>
+
+                                                                        <li class="list-inline-item message-img-list">
+                                                                            <a class="d-inline-block m-1" href="#">
+                                                                                <img src="theme-admin/dason/assets/images/small/img-2.jpg"
+                                                                                    alt=""
+                                                                                    class="rounded img-thumbnail">
+                                                                            </a>
+                                                                        </li>
+                                                                    </ul>
+                                                                </div>
+                                                                <div class="dropdown align-self-start">
+                                                                    <a class="dropdown-toggle" href="#" role="button"
+                                                                        data-bs-toggle="dropdown" aria-haspopup="true"
+                                                                        aria-expanded="false">
+                                                                        <i class="bx bx-dots-vertical-rounded"></i>
+                                                                    </a>
+                                                                    <div class="dropdown-menu">
+                                                                        <a class="dropdown-item" href="#">Copy</a>
+                                                                        <a class="dropdown-item" href="#">Save</a>
+                                                                        <a class="dropdown-item" href="#">Forward</a>
+                                                                        <a class="dropdown-item" href="#">Delete</a>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </li>
+                                        </ul>
+                                    </div>
+
+                                    <div class="px-3">
+                                        <div class="row">
+                                            <div class="col">
+                                                <div class="position-relative">
+                                                    <input type="text" class="form-control border bg-light-subtle"
+                                                        placeholder="Enter Message...">
+                                                </div>
                                             </div>
-                                        </div>
-                                        <div class="col-sm-auto">
-                                            <ul class="pagination pagination-separated pagination-sm justify-content-center justify-content-sm-start mb-0">
-                                                <li class="page-item disabled">
-                                                    <a href="#!" class="page-link">←</a>
-                                                </li>
-                                                <li class="page-item">
-                                                    <a href="#!" class="page-link">1</a>
-                                                </li>
-                                                <li class="page-item active">
-                                                    <a href="#!" class="page-link">2</a>
-                                                </li>
-                                                <li class="page-item">
-                                                    <a href="#!" class="page-link">3</a>
-                                                </li>
-                                                <li class="page-item">
-                                                    <a href="#!" class="page-link">→</a>
-                                                </li>
-                                            </ul>
+                                            <div class="col-auto">
+                                                <button type="submit"
+                                                    class="btn btn-primary chat-send w-md waves-effect waves-light"><span
+                                                        class="d-none d-sm-inline-block me-2">Send</span> <i
+                                                        class="mdi mdi-send float-end"></i></button>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
                             </div>
-                        </div><!--end col-->
-                        <div class="col-xl-4">
-                            <div class="row">
-                                <div class="col-xl-12">
-                                    <div class="card">
-                                        <div class="card-body">
-                                            <div class="d-flex">
-                                                <div class="flex-shrink-0 me-3">
-                                                    <img src="themeadmin/velzon/assets/images/users/avatar-1.jpg" alt="" class="avatar-sm rounded-circle img-thumbnail">
-                                                </div>
-                                                <div class="flex-grow-1">
-                                                    <div class="d-flex">
-                                                        <div class="flex-grow-1">
-                                                            <h5 class="mb-1 card-title">Anna Adame</h5>
-                                                            <p class="mb-0 text-muted">Founder</p>
-                                                        </div>
-
-                                                        <div class="flex-shrink-0 dropdown ms-2">
-                                                            <button class="btn btn-light btn-sm" type="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                                                <i class="bx bxs-cog align-middle me-1"></i> Setting
-                                                            </button>
-                                                            <div class="dropdown-menu dropdown-menu-end">
-                                                                <a class="dropdown-item" href="#">Action</a>
-                                                                <a class="dropdown-item" href="#">Another action</a>
-                                                                <a class="dropdown-item" href="#">Something else</a>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                    <div class="row mt-3">
-                                                        <div class="col-4">
-                                                            <div class="border p-2 rounded border-dashed">
-                                                                <p class="text-muted text-truncate mb-2">Total Post</p>
-                                                                <h5 class="mb-0">26</h5>
-                                                            </div>
-                                                        </div>
-                                                        <div class="col-4">
-                                                            <div class="border p-2 rounded border-dashed">
-                                                                <p class="text-muted text-truncate mb-2">Subscribes</p>
-                                                                <h5 class="mb-0">17k</h5>
-                                                            </div>
-                                                        </div>
-                                                        <div class="col-4">
-                                                            <div class="border p-2 rounded border-dashed">
-                                                                <p class="text-muted text-truncate mb-2">Viewers</p>
-                                                                <h5 class="mb-0">487k</h5>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div><!--end col-->
-                                <div class="col-xl-12">
-                                    <div class="card">
-                                        <div class="card-header align-items-center d-flex">
-                                            <h5 class="card-title mb-0 flex-grow-1">Used Device</h5>
-                                            <div class="flex-shrink-0">
-                                                <div class="dropdown card-header-dropdown">
-                                                    <a class="text-reset dropdown-btn" href="#" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                                        <span class="text-muted fs-16"><i class="mdi mdi-dots-vertical align-middle"></i></span>
-                                                    </a>
-                                                    <div class="dropdown-menu dropdown-menu-end">
-                                                        <a class="dropdown-item" href="#">Today</a>
-                                                        <a class="dropdown-item" href="#">Last Week</a>
-                                                        <a class="dropdown-item" href="#">Last Month</a>
-                                                        <a class="dropdown-item" href="#">Current Year</a>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div><!-- end card header -->
-                                        <div class="card-body">
-                                            <div id="gradient_chart" data-colors='["--vz-primary", "--vz-success", "--vz-warning"]' class="apex-charts" dir="ltr"></div>
-                                        </div>
-                                    </div>
-                                </div><!--end col-->
-                            </div><!--end row-->
-                        </div><!--end col-->
-                    </div><!--end row-->
-
+                            <!-- end card -->
+                        </div>
+                        <!-- end col -->
+                    </div><!-- end row -->
                 </div>
                 <!-- container-fluid -->
             </div>
             <!-- End Page-content -->
 
-
+            @include('admin.layouts.footer')
         </div>
         <!-- end main content-->
 
@@ -500,26 +1120,16 @@
     <!-- END layout-wrapper -->
 
 
-    <!--start back-to-top-->
-    <button onclick="topFunction()" class="btn btn-danger btn-icon" id="back-to-top">
-        <i class="ri-arrow-up-line"></i>
-    </button>
-    <!--end back-to-top-->
-
-    <!--preloader-->
-    <div id="preloader">
-        <div id="status">
-            <div class="spinner-border text-primary avatar-sm" role="status">
-                <span class="visually-hidden">Loading...</span>
-            </div>
-        </div>
-    </div>
-
-    <div class="customizer-setting d-none d-md-block">
-        <div class="btn-info rounded-pill shadow-lg btn btn-icon btn-lg p-2" data-bs-toggle="offcanvas" data-bs-target="#theme-settings-offcanvas" aria-controls="theme-settings-offcanvas">
-            <i class='mdi mdi-spin mdi-cog-outline fs-22'></i>
-        </div>
-    </div>
 
 
+    <!-- Right bar overlay-->
+    <div class="rightbar-overlay"></div>
 
+
+    @include('admin.layouts.libs_js')
+</body>
+
+
+<!-- Mirrored from themesbrand.com/dason/layouts/index.html by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 21 Mar 2025 10:58:44 GMT -->
+
+</html>

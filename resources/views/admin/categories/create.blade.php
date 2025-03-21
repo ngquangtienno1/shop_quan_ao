@@ -1,45 +1,107 @@
-<form action="{{route('categories.store')}}" method="POST">
-    @csrf
-    <div class="main-content">
-        <div id="pagination">
-            <div class="page-content">
-                <div class="modal-content">
-                    <div class="modal-header bg-light p-3">
-                        <h5 class="modal-title" id="exampleModalLabel">Thêm danh mục</h5>
-                        
-                    </div><br>
-                    <form class="tablelist-form" autocomplete="off">
-                        <div class="modal-body">
-                            <div class="mb-3" id="modal-id" style="display: none;">
-                                <label for="id-field" class="form-label">ID</label>
-                                <input type="text" id="id-field" class="form-control" placeholder="ID" readonly="">
-                            </div>
-    
-                            <div class="mb-3">
-                                <label for="customername-field" class="form-label">Tên danh mục</label>
-                                <input type="text" id="customername-field" class="form-control" placeholder="Vui lòng nhập tên danh mục"
-                                    required="">
-                                <div class="invalid-feedback">Vui lòng nhập tên danh mục</div>
-                            </div>
-                            <div class="mb-3">
-                                <label for="customername-field" class="form-label">Mô tả</label>
-                                <input type="text" id="customername-field" class="form-control" placeholder="Vui lòng nhập mô tả"
-                                    required="">
-                                <div class="invalid-feedback">Vui lòng nhập mô tả</div>
-                            </div>
-    
-                        </div>
-                        <div class="modal-footer" style="display: block;">
-                            <div class="hstack gap-2 justify-content-end">
-                                <button class="btn btn-light" type="reset">Hoàn tác</button>
-                                <button class="btn btn-success" id="add-btn" type="submit">Thêm</button>
-                                <!-- <button type="button" class="btn btn-success" id="edit-btn">Update</button> -->
-                            </div>
-                        </div>
-                    </form>
-                </div>
-            </div>
-        </div>
-    </div>
-</form>
+<!doctype html>
+<html lang="en">
+<!-- Mirrored from themesbrand.com/dason/layouts/ecommerce-orders.html by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 21 Mar 2025 10:58:56 GMT -->
 
+<head>
+    <base href="{{ env('APP_URL') }}">
+    <meta charset="utf-8" />
+    <title>Orders | Dason - Admin & Dashboard Template</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta content="Premium Multipurpose Admin & Dashboard Template" name="description" />
+    <meta content="Themesbrand" name="author" />
+    @include('admin.layouts.libs_css')
+</head>
+
+<body data-topbar="dark">
+    <!-- <body data-layout="horizontal"> -->
+    <!-- Begin page -->
+    <div id="layout-wrapper">
+        @include('admin.layouts.header')
+        <!-- ========== Left Sidebar Start ========== -->
+        @include('admin.layouts.sidebar')
+        <!-- Left Sidebar End -->
+        <!-- ============================================================== -->
+        <!-- Start right Content here -->
+        <!-- ============================================================== -->
+        <form action="{{ route('categories.store') }}" method="POST">
+            @csrf
+            <div class="main-content">
+                <div class="page-content">
+                    <div class="container-fluid">
+                        <div class="row">
+                            <div class="col-12">
+                                <div class="page-title-box d-sm-flex align-items-center justify-content-between">
+                                    <a href="{{ route('categories.index')}}" class="btn btn-warning">Quay lại</a>
+    
+                                    <div class="page-title-right">
+                                        <ol class="breadcrumb m-0">
+                                            <li class="breadcrumb-item"><a href="{{ route('categories.index')}}">Quản lý danh mục</a>
+                                            </li>
+                                            <li class="breadcrumb-item active">Thêm danh mục</li>
+                                        </ol>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-xl-12">
+                            <div class="card">
+                                <div class="card-header">
+                                    <h4 class="card-title">Thêm danh mục</h4>
+                                </div>
+                                <div class="card-body">
+                                    <div class="row">
+                                        <div class="col-md-6">
+                                            <div class="mb-3">
+                                                <label class="form-label" for="validationCustom01">Tên danh mục</label>
+                                                <input type="text" class="form-control" id="validationCustom01"
+                                                    name="name" placeholder="Mời nhập tên danh mục" value="">
+                                                @if ($errors->has('name'))
+                                                    <span class="text-danger">{{ $errors->first('name') }}</span>
+                                                @endif
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <div class="mb-3">
+                                                <label class="form-label" for="validationCustom02">Mô tả</label>
+                                                <input type="text" class="form-control" id="validationCustom02"
+                                                    placeholder="Mời nhập mô tả" value="" name="description">
+                                                @if ($errors->has('description'))
+                                                    <span class="text-danger">{{ $errors->first('description') }}</span>
+                                                @endif
+                                            </div>
+                                        </div>
+                                    </div>
+
+
+                                    <button class="btn btn-primary" type="submit">Thêm</button>
+                                </div>
+                            </div>
+                            <!-- end card -->
+                        </div>
+                        <!-- end main content-->
+
+                    </div>
+                    <!-- END layout-wrapper -->
+
+
+                    <!-- Right Sidebar -->
+
+
+                </div>
+
+            </div>
+
+        </form>
+
+    </div>
+    <!-- /Right-bar -->
+
+    <!-- Right bar overlay-->
+    <div class="rightbar-overlay"></div>
+    @include('admin.layouts.libs_js')
+
+</body>
+
+<!-- Mirrored from themesbrand.com/dason/layouts/ecommerce-orders.html by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 21 Mar 2025 10:58:56 GMT -->
+
+</html>

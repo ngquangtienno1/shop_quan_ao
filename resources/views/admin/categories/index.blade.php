@@ -1,122 +1,312 @@
-<div class="main-content">
-    <div id="pagination">
+<!doctype html>
+<html lang="en">
+<!-- Mirrored from themesbrand.com/dason/layouts/ecommerce-orders.html by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 21 Mar 2025 10:58:56 GMT -->
 
-        <div class="page-content">
-            <div class="container-fluid">
-                <div class="row">
-                    <div class="col-lg-12">
-                        <div class="card">
-                            <div class="card-header">
-                                <h4 class="card-title mb-0">Danh mục sản phẩm</h4>
-                            </div><!-- end card header -->
+<head>
+    <base href="{{ env('APP_URL') }}">
+    <meta charset="utf-8" />
+    <title>Orders | Dason - Admin & Dashboard Template</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta content="Premium Multipurpose Admin & Dashboard Template" name="description" />
+    <meta content="Themesbrand" name="author" />
+    @include('admin.layouts.libs_css')
+</head>
 
-                            <div class="card-body">
-                                <div class="listjs-table" id="customerList">
-                                    <div class="row g-4 mb-3">
-                                        <div class="col-sm-auto">
-                                            <div>
-                                                <button type="button" class="btn btn-success add-btn"
-                                                    data-bs-toggle="modal" id="create-btn"
-                                                    data-bs-target="#showModal"><i
-                                                        class="ri-add-line align-bottom me-1"></i> Add</button>
-                                                <button class="btn btn-soft-danger" onClick="deleteMultiple()"><i
-                                                        class="ri-delete-bin-2-line"></i></button>
-                                            </div>
-                                        </div>
-                                        <div class="col-sm">
-                                            <div class="d-flex justify-content-sm-end">
-                                                <div class="search-box ms-2">
-                                                    <input type="text" class="form-control search"
-                                                        placeholder="Search...">
-                                                    <i class="ri-search-line search-icon"></i>
+<body data-topbar="dark">
+    <!-- <body data-layout="horizontal"> -->
+    <!-- Begin page -->
+    <div id="layout-wrapper">
+        @include('admin.layouts.header')
+        <!-- ========== Left Sidebar Start ========== -->
+        @include('admin.layouts.sidebar')
+        <!-- Left Sidebar End -->
+        <!-- ============================================================== -->
+        <!-- Start right Content here -->
+        <!-- ============================================================== -->
+        <div class="main-content">
+            <div class="page-content">
+                <div class="container-fluid">
+                    <!-- start page title -->
+                    <div class="row">
+                        <div class="col-12">
+                            <div class="page-title-box d-sm-flex align-items-center justify-content-between">
+                               <h4><a href="{{ route('categories.index')}}" >Danh sách danh mục</a></h4> 
+                                <div class="page-title-right">
+                                    <ol class="breadcrumb m-0">
+                                        <li class="breadcrumb-item"><a href="javascript: void(0);">Quản lý danh mục</a>
+                                        </li>
+                                        <li class="breadcrumb-item active">Danh sách danh mục</li>
+                                    </ol>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- end page title -->
+                    <div class="row">
+                        <div class="col-12">
+                            <div class="card">
+                                <div class="card-body">
+                                    <div class="row mb-2">
+                                        <div class="col-sm-4">
+                                            <div class="search-box me-2 mb-2 d-inline-block">
+                                                <div class="position-relative">
+                                                    <form action="{{ route('categories.search') }}" method="GET">
+                                                        <div class="input-group">
+                                                            <input type="text" name="keyword" class="form-control" placeholder="Tìm kiếm..." value="{{ request()->keyword }}" id="searchInput">
+                                                            <button class="btn btn-primary" type="submit">
+                                                                <i class="bx bx-search-alt"></i>
+                                                            </button>
+                                                        </div>
+                                                    </form>
+                                                    
                                                 </div>
                                             </div>
                                         </div>
+                                        <div class="col-sm-8">
+                                            <a href="{{ route('categories.create') }}">
+                                                <div class="text-sm-end">
+                                                    <button type="button"
+                                                        class="btn btn-success btn-rounded waves-effect waves-light mb-2 me-2"><i
+                                                            class="mdi mdi-plus me-1"></i> Thêm danh mục</button>
+                                                </div>
+                                            </a>
+                                        </div><!-- end col-->
                                     </div>
 
-                                    <div class="table-responsive table-card mt-3 mb-1">
-                                        <!-- Phương pháp 2: Sử dụng tính năng Str::limit của Laravel -->
-                                        <table class="table align-middle table-nowrap" id="customerTable">
+                                    <div class="table-responsive">
+                                        <table class="table align-middle table-nowrap table-check">
                                             <thead class="table-light">
                                                 <tr>
-                                                    <th>STT</th>
-                                                    <th>Tên danh mục</th>
-                                                    <th>Mô tả</th>
-                                                    <th >Action</th>
+
+                                                    <th class="align-middle">STT</th>
+                                                    <th class="align-middle">Tên danh mục</th>
+                                                    <th class="align-middle">Mô tả</th>
+                                                    <th class="align-middle">Thao tác</th>
                                                 </tr>
                                             </thead>
-                                            <tbody class="list form-check-all">
-                                                @foreach ($categories as $key => $item)
+                                            <tbody>
+                                                @foreach ($categories as $key => $category)
                                                     <tr>
-                                                        <td>{{ $key + 1 }}</td>
-                                                        <td class="customer_name">{{ $item->name }}</td>
-                                                        <td class="email text-truncate" style="max-width: 250px;"
-                                                            data-bs-toggle="tooltip" title="{{ $item->description }}">
-                                                            {{ $item->description }}
+                                                        <td>{{ ($categories->currentPage() - 1) * $categories->perPage() + $loop->iteration }}
                                                         </td>
+                                                        <td>{{ $category->name }}</td>
+                                                        <td>{{ Str::limit($category->description, 30, '...') }}</td>
                                                         <td>
-                                                            <div class="d-flex gap-2">
-                                                                <div class="edit">
-                                                                    <button class="btn btn-sm btn-success edit-item-btn"
-                                                                        data-bs-toggle="modal"
-                                                                        data-bs-target="#showModal">Edit</button>
-                                                                </div>
-                                                                <div class="remove">
-                                                                    <button
-                                                                        class="btn btn-sm btn-danger remove-item-btn"
-                                                                        data-bs-toggle="modal"
-                                                                        data-bs-target="#deleteRecordModal">Remove</button>
-                                                                </div>
+                                                            <div class="d-flex gap-3">
+                                                                <a href="{{ route('categories.edit', ['id' => $category->id]) }}"
+                                                                    class="text-success"><i
+                                                                        class="mdi mdi-pencil font-size-18"></i></a>
+                                                                <form
+                                                                    action="{{ route('categories.destroy', ['id' => $category->id]) }}"
+                                                                    method="POST">
+                                                                    @csrf
+                                                                    @method('DELETE')
+                                                                    <button type="submit"
+                                                                        class="btn btn-link text-danger"
+                                                                        onclick="return confirm('Bạn chắc chắn muốn xóa?')">
+                                                                        <i class="mdi mdi-trash-can font-size-18"></i>
+                                                                    </button>
+                                                                </form>
+
+
                                                             </div>
                                                         </td>
                                                     </tr>
                                                 @endforeach
+
                                             </tbody>
                                         </table>
-                                        <div class="noresult" style="display: none">
-                                            <div class="text-center">
-                                                <lord-icon src="https://cdn.lordicon.com/msoeawqm.json" trigger="loop"
-                                                    colors="primary:#121331,secondary:#08a88a"
-                                                    style="width:75px;height:75px"></lord-icon>
-                                                <h5 class="mt-2">Sorry! No Result Found</h5>
-                                                <p class="text-muted mb-0">We've searched more than 150+ Orders We did
-                                                    not
-                                                    find any orders for you search.</p>
-                                            </div>
-                                        </div>
+                                        {{ $categories->links('pagination::bootstrap-5') }}
+
                                     </div>
-                                    {{ $categories->links('pagination::bootstrap-5') }}
-
-                                    <p>Đang hiển thị {{ $categories->firstItem() }} - {{ $categories->lastItem() }}
-                                        trong
-                                        tổng số {{ $categories->total() }} danh mục.</p>
-                                    <script>
-                                        function fetch_data(page) {
-                                            $.ajax({
-                                                url: "/categories?page=" + page,
-                                                type: "GET",
-                                                headers: {
-                                                    'X-Requested-With': 'XMLHttpRequest'
-                                                },
-                                                success: function(data) {
-                                                    // Sử dụng jQuery để thay thế toàn bộ nội dung phần tử chứa bảng
-                                                    $("#pagination").html($(data).find("#pagination").html());
-
-                                                    // Cập nhật URL
-                                                    window.history.pushState({}, "", "/categories?page=" + page);
-                                                }
-                                            });
-                                        }
-                                    </script>
 
                                 </div>
-                            </div><!-- end card -->
+                            </div>
                         </div>
-                        <!-- end col -->
                     </div>
-                    <!-- end col -->
-                </div>
+                    <!-- end row -->
+
+                </div> <!-- container-fluid -->
             </div>
+            <!-- End Page-content -->
+
+
+
+            @include('admin.layouts.footer')
         </div>
+        <!-- end main content-->
+
     </div>
-</div>
+    <!-- END layout-wrapper -->
+
+
+    <!-- Right Sidebar -->
+    <div class="right-bar">
+        <div data-simplebar class="h-100">
+            <div class="rightbar-title d-flex align-items-center p-3">
+
+                <h5 class="m-0 me-2">Theme Customizer</h5>
+
+                <a href="javascript:void(0);" class="right-bar-toggle ms-auto">
+                    <i class="mdi mdi-close noti-icon"></i>
+                </a>
+            </div>
+
+            <!-- Settings -->
+            <hr class="m-0" />
+
+            <div class="p-4">
+                <h6 class="mb-3">Select Custome Colors</h6>
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input theme-color" type="radio" name="theme-mode" id="theme-default"
+                        value="default" onchange="document.documentElement.setAttribute('data-theme-mode', 'default')"
+                        checked>
+                    <label class="form-check-label" for="theme-default">Default</label>
+                </div>
+
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input theme-color" type="radio" name="theme-mode" id="theme-red"
+                        value="red" onchange="document.documentElement.setAttribute('data-theme-mode', 'red')">
+                    <label class="form-check-label" for="theme-red">Red</label>
+                </div>
+
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input theme-color" type="radio" name="theme-mode" id="theme-purple"
+                        value="purple" onchange="document.documentElement.setAttribute('data-theme-mode', 'purple')">
+                    <label class="form-check-label" for="theme-purple">Purple</label>
+                </div>
+
+
+                <h6 class="mt-4 mb-3 pt-2">Layout</h6>
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio" name="layout" id="layout-vertical"
+                        value="vertical">
+                    <label class="form-check-label" for="layout-vertical">Vertical</label>
+                </div>
+
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio" name="layout" id="layout-horizontal"
+                        value="horizontal">
+                    <label class="form-check-label" for="layout-horizontal">Horizontal</label>
+                </div>
+
+                <h6 class="mt-4 mb-3 pt-2">Layout Mode</h6>
+
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio" name="layout-mode" id="layout-mode-light"
+                        value="light">
+                    <label class="form-check-label" for="layout-mode-light">Light</label>
+                </div>
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio" name="layout-mode" id="layout-mode-dark"
+                        value="dark">
+                    <label class="form-check-label" for="layout-mode-dark">Dark</label>
+                </div>
+
+                <h6 class="mt-4 mb-3 pt-2">Layout Width</h6>
+
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio" name="layout-width" id="layout-width-fuild"
+                        value="fuild" onchange="document.body.setAttribute('data-layout-size', 'fluid')">
+                    <label class="form-check-label" for="layout-width-fuild">Fluid</label>
+                </div>
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio" name="layout-width" id="layout-width-boxed"
+                        value="boxed"
+                        onchange="document.body.setAttribute('data-layout-size', 'boxed'),document.body.setAttribute('data-sidebar-size', 'sm')">
+                    <label class="form-check-label" for="layout-width-boxed">Boxed</label>
+                </div>
+
+                <h6 class="mt-4 mb-3 pt-2">Layout Position</h6>
+
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio" name="layout-position" id="layout-position-fixed"
+                        value="fixed" onchange="document.body.setAttribute('data-layout-scrollable', 'false')">
+                    <label class="form-check-label" for="layout-position-fixed">Fixed</label>
+                </div>
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio" name="layout-position"
+                        id="layout-position-scrollable" value="scrollable"
+                        onchange="document.body.setAttribute('data-layout-scrollable', 'true')">
+                    <label class="form-check-label" for="layout-position-scrollable">Scrollable</label>
+                </div>
+
+                <h6 class="mt-4 mb-3 pt-2">Topbar Color</h6>
+
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio" name="topbar-color" id="topbar-color-light"
+                        value="light" onchange="document.body.setAttribute('data-topbar', 'light')">
+                    <label class="form-check-label" for="topbar-color-light">Light</label>
+                </div>
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio" name="topbar-color" id="topbar-color-dark"
+                        value="dark" onchange="document.body.setAttribute('data-topbar', 'dark')">
+                    <label class="form-check-label" for="topbar-color-dark">Dark</label>
+                </div>
+
+                <h6 class="mt-4 mb-3 pt-2 sidebar-setting">Sidebar Size</h6>
+
+                <div class="form-check sidebar-setting">
+                    <input class="form-check-input" type="radio" name="sidebar-size" id="sidebar-size-default"
+                        value="default" onchange="document.body.setAttribute('data-sidebar-size', 'lg')">
+                    <label class="form-check-label" for="sidebar-size-default">Default</label>
+                </div>
+                <div class="form-check sidebar-setting">
+                    <input class="form-check-input" type="radio" name="sidebar-size" id="sidebar-size-compact"
+                        value="compact" onchange="document.body.setAttribute('data-sidebar-size', 'md')">
+                    <label class="form-check-label" for="sidebar-size-compact">Compact</label>
+                </div>
+                <div class="form-check sidebar-setting">
+                    <input class="form-check-input" type="radio" name="sidebar-size" id="sidebar-size-small"
+                        value="small" onchange="document.body.setAttribute('data-sidebar-size', 'sm')">
+                    <label class="form-check-label" for="sidebar-size-small">Small (Icon View)</label>
+                </div>
+
+                <h6 class="mt-4 mb-3 pt-2 sidebar-setting">Sidebar Color</h6>
+
+                <div class="form-check sidebar-setting">
+                    <input class="form-check-input" type="radio" name="sidebar-color" id="sidebar-color-light"
+                        value="light" onchange="document.body.setAttribute('data-sidebar', 'light')">
+                    <label class="form-check-label" for="sidebar-color-light">Light</label>
+                </div>
+                <div class="form-check sidebar-setting">
+                    <input class="form-check-input" type="radio" name="sidebar-color" id="sidebar-color-dark"
+                        value="dark" onchange="document.body.setAttribute('data-sidebar', 'dark')">
+                    <label class="form-check-label" for="sidebar-color-dark">Dark</label>
+                </div>
+                <div class="form-check sidebar-setting">
+                    <input class="form-check-input" type="radio" name="sidebar-color" id="sidebar-color-brand"
+                        value="brand" onchange="document.body.setAttribute('data-sidebar', 'brand')">
+                    <label class="form-check-label" for="sidebar-color-brand">Brand</label>
+                </div>
+
+                <h6 class="mt-4 mb-3 pt-2">Direction</h6>
+
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio" name="layout-direction" id="layout-direction-ltr"
+                        value="ltr">
+                    <label class="form-check-label" for="layout-direction-ltr">LTR</label>
+                </div>
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio" name="layout-direction" id="layout-direction-rtl"
+                        value="rtl">
+                    <label class="form-check-label" for="layout-direction-rtl">RTL</label>
+                </div>
+
+
+
+            </div>
+
+        </div> <!-- end slimscroll-menu-->
+    </div>
+    <!-- /Right-bar -->
+
+    <!-- Right bar overlay-->
+    <div class="rightbar-overlay"></div>
+    @include('admin.layouts.libs_js')
+
+</body>
+
+<!-- Mirrored from themesbrand.com/dason/layouts/ecommerce-orders.html by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 21 Mar 2025 10:58:56 GMT -->
+
+</html>
