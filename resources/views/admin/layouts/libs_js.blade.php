@@ -1,20 +1,23 @@
-  <!-- JAVASCRIPT -->
-  <script src="themeadmin/velzon/assets/libs/bootstrap/js/bootstrap.bundle.min.js"></script>
-  <script src="themeadmin/velzon/assets/libs/simplebar/simplebar.min.js"></script>
-  <script src="themeadmin/velzon/assets/libs/node-waves/waves.min.js"></script>
-  <script src="themeadmin/velzon/assets/libs/feather-icons/feather.min.js"></script>
-  <script src="themeadmin/velzon/assets/js/pages/plugins/lord-icon-2.1.0.js"></script>
-  <script src="themeadmin/velzon/assets/js/plugins.js"></script>
-
-  <!-- apexcharts -->
-  <script src="themeadmin/velzon/assets/libs/apexcharts/apexcharts.min.js"></script>
-
-  <script src="themeadmin/velzon/assets/js/pages/dashboard-blog.init.js"></script>
-
-  <!-- App js -->
-  <script src="themeadmin/velzon/assets/js/app.js"></script>
-</body>
+<!-- JAVASCRIPT -->
+<script src="theme-admin/dason/assets/libs/jquery/jquery.min.js"></script>
+<script src="theme-admin/dason/assets/libs/bootstrap/js/bootstrap.bundle.min.js"></script>
+<script src="theme-admin/dason/assets/libs/metismenu/metisMenu.min.js"></script>
+<script src="theme-admin/dason/assets/libs/simplebar/simplebar.min.js"></script>
+<script src="theme-admin/dason/assets/libs/node-waves/waves.min.js"></script>
+<script src="theme-admin/dason/assets/libs/feather-icons/feather.min.js"></script>
+<!-- pace js -->
+<script src="theme-admin/dason/assets/libs/pace-js/pace.min.js"></script>
 
 
-<!-- Mirrored from themesbrand.com/velzon/html/corporate/dashboard-blog.html by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 14 Mar 2025 16:19:46 GMT -->
-</html>
+<!-- apexcharts -->
+<script src="theme-admin/dason/assets/libs/apexcharts/apexcharts.min.js"></script>
+
+<!-- Plugins js-->
+<script src="theme-admin/dason/assets/libs/admin-resources/jquery.vectormap/jquery-jvectormap-1.2.2.min.js"></script>
+<script src="theme-admin/dason/assets/libs/admin-resources/jquery.vectormap/maps/jquery-jvectormap-world-mill-en.js"></script>
+
+<script src="theme-admin/dason/assets/js/pages/allchart.js"></script>
+<!-- dashboard init -->
+<script src="theme-admin/dason/assets/js/pages/dashboard.init.js"></script>
+
+<script src="theme-admin/dason/assets/js/app.js"></script>

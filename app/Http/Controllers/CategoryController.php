@@ -5,18 +5,24 @@ namespace App\Http\Controllers;
 use App\Models\Category;
 use App\Http\Requests\StoreCategoryRequest;
 use App\Http\Requests\UpdateCategoryRequest;
+use Illuminate\Http\Request;
+
 
 class CategoryController extends Controller
 {
     /**
      * Display a listing of the resource.
      */
-    public function index()
+
+     public $data = [];
+    public function index(Request $request)
     {
         $categories = Category::paginate(10); // 10 danh mục mỗi trang
-        $template = 'admin.categories.index';
-        return view('admin.categories.app', compact('categories', 'template'));
+
+        $this->data['title'] = 'Danh mục sản phẩm';
+        return view('admin.categories.index',$this->data, compact('categories'));
     }
+
 
     /**
      * Show the form for creating a new resource.

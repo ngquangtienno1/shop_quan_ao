@@ -6,17 +6,20 @@ use App\Models\Dashboard;
 use App\Http\Requests\StoreDashboardRequest;
 use App\Http\Requests\UpdateDashboardRequest;
 
+
 class DashboardController extends Controller
 {
     /**
      * Display a listing of the resource.
      */
+    public $data = [];
     public function index()
     {
         //
 
-        $template = 'admin.dashboard.index';
-        return view('admin.dashboard.app',compact('template'));
+        $this->data['title'] = 'Dashboard';
+
+        return view('admin.dashboard.index', $this->data);
     }
 
     /**
