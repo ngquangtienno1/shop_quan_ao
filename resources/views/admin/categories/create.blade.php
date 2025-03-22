@@ -1,25 +1,10 @@
-<!doctype html>
-<html lang="en">
-<!-- Mirrored from themesbrand.com/dason/layouts/ecommerce-orders.html by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 21 Mar 2025 10:58:56 GMT -->
+@include('admin.layouts.AdminLayout')
+@section('content')
 
-<head>
-    <base href="{{ env('APP_URL') }}">
-    <meta charset="utf-8" />
-    <title>Orders | Dason - Admin & Dashboard Template</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta content="Premium Multipurpose Admin & Dashboard Template" name="description" />
-    <meta content="Themesbrand" name="author" />
-    @include('admin.layouts.libs_css')
-</head>
-
-<body data-topbar="dark">
-    <!-- <body data-layout="horizontal"> -->
     <!-- Begin page -->
     <div id="layout-wrapper">
-        @include('admin.layouts.header')
-        <!-- ========== Left Sidebar Start ========== -->
-        @include('admin.layouts.sidebar')
-        <!-- Left Sidebar End -->
+               <!-- ========== Left Sidebar Start ========== -->
+                <!-- Left Sidebar End -->
         <!-- ============================================================== -->
         <!-- Start right Content here -->
         <!-- ============================================================== -->
@@ -32,7 +17,7 @@
                             <div class="col-12">
                                 <div class="page-title-box d-sm-flex align-items-center justify-content-between">
                                     <a href="{{ route('categories.index')}}" class="btn btn-warning">Quay lại</a>
-    
+
                                     <div class="page-title-right">
                                         <ol class="breadcrumb m-0">
                                             <li class="breadcrumb-item"><a href="{{ route('categories.index')}}">Quản lý danh mục</a>
@@ -96,12 +81,7 @@
     </div>
     <!-- /Right-bar -->
 
-    <!-- Right bar overlay-->
-    <div class="rightbar-overlay"></div>
-    @include('admin.layouts.libs_js')
 
-</body>
+@endsection
 
-<!-- Mirrored from themesbrand.com/dason/layouts/ecommerce-orders.html by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 21 Mar 2025 10:58:56 GMT -->
 
-</html>

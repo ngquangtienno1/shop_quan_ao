@@ -1,4 +1,4 @@
-<!doctype html>
+{{-- <!doctype html>
 <html lang="en">
 <!-- Mirrored from themesbrand.com/dason/layouts/ecommerce-orders.html by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 21 Mar 2025 10:58:56 GMT -->
 
@@ -42,7 +42,7 @@
                         </div>
                     </div>
                     <!-- end page title -->
-                  
+
                     <!-- end row -->
 
                 </div> <!-- container-fluid -->
@@ -228,4 +228,4 @@
 
 <!-- Mirrored from themesbrand.com/dason/layouts/ecommerce-orders.html by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 21 Mar 2025 10:58:56 GMT -->
 
-</html>
+</html> --}}

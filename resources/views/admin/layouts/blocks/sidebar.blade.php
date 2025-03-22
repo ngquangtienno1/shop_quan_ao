@@ -11,7 +11,7 @@
                             <li class="menu-title" data-key="t-menu">Menu</li>
 
                             <li>
-                                <a href="index.html">
+                                <a href="{{route('dashboard')}}">
                                     <i data-feather="home"></i>
                                     <span class="badge rounded-pill bg-success-subtle text-success float-end">9+</span>
                                     <span data-key="t-dashboard">Dashboard</span>
@@ -20,7 +20,7 @@
 
 
 
-                        
+
 
                             <li>
                                 <a href="javascript: void(0);" class="has-arrow">

@@ -10,7 +10,22 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta content="Premium Multipurpose Admin & Dashboard Template" name="description" />
         <meta content="Themesbrand" name="author" />
-       @include('admin.layouts.libs_css')
+        <!-- App favicon -->
+    <link rel="shortcut icon" href="theme-admin/dason/assets/images/favicon.ico">
+
+    <!-- plugin css -->
+    <link href="theme-admin/dason/assets/libs/admin-resources/jquery.vectormap/jquery-jvectormap-1.2.2.css"
+        rel="stylesheet" type="text/css" />
+
+    <!-- preloader css -->
+    <link rel="stylesheet" href="theme-admin/dason/assets/css/preloader.min.css" type="text/css" />
+
+    <!-- Bootstrap Css -->
+    <link href="theme-admin/dason/assets/css/bootstrap.min.css" id="bootstrap-style" rel="stylesheet" type="text/css" />
+    <!-- Icons Css -->
+    <link href="theme-admin/dason/assets/css/icons.min.css" rel="stylesheet" type="text/css" />
+    <!-- App Css-->
+    <link href="theme-admin/dason/assets/css/app.min.css" id="app-style" rel="stylesheet" type="text/css" />
 
     </head>
 
@@ -26,18 +41,18 @@
                                 <div class="d-flex flex-column h-100">
                                     <div class="mb-4 mb-md-5 text-center">
                                         <a href="index.html" class="d-block auth-logo">
-                                            <img src="theme-admin/dason/assets/images/logo-sm.svg" alt="" height="28"> <span class="logo-txt">Dason</span>
+                                            <img src="theme-admin/dason/assets/images/logo-sm.svg" alt="" height="28"> <span class="logo-txt">Admin</span>
                                         </a>
                                     </div>
                                     <div class="auth-content my-auto">
                                         <div class="text-center">
                                             <h5 class="mb-0">Welcome Back !</h5>
-                                            <p class="text-muted mt-2">Sign in to continue to Dason.</p>
+                                            <p class="text-muted mt-2">Hãy đăng nhập để sử dụng những chức năng Admin.</p>
                                         </div>
                                         <form class="mt-4 pt-2" action="{{route('auth.login')}}" method="POST">
                                             @csrf
                                             <div class="form-floating form-floating-custom mb-4">
-                                                <input type="text" name="email" class="form-control" id="input-username" placeholder="Enter User Name">
+                                                <input type="text" name="email" class="form-control" id="input-username" placeholder="Enter User Name" value="{{ old('email') }}">
                                                 <label for="input-username">Email</label>
                                                 <div class="form-floating-icon">
                                                    <i data-feather="users"></i>
@@ -62,17 +77,7 @@
                                             @enderror
                                             </div>
 
-                                            <div class="row mb-4">
-                                                <div class="col">
-                                                    <div class="form-check font-size-15">
-                                                        <input class="form-check-input" type="checkbox" id="remember-check">
-                                                        <label class="form-check-label font-size-13" for="remember-check">
-                                                            Remember me
-                                                        </label>
-                                                    </div>
-                                                </div>
 
-                                            </div>
                                             <div class="mb-3">
                                                 <button class="btn btn-primary w-100 waves-effect waves-light" type="submit">Đăng nhập</button>
                                             </div>
@@ -381,7 +386,34 @@
         <!-- Right bar overlay-->
         <div class="rightbar-overlay"></div>
 
-      @include('admin.layouts.libs_js')
+      <!-- JAVASCRIPT -->
+<script src="theme-admin/dason/assets/libs/jquery/jquery.min.js"></script>
+<script src="theme-admin/dason/assets/libs/bootstrap/js/bootstrap.bundle.min.js"></script>
+<script src="theme-admin/dason/assets/libs/metismenu/metisMenu.min.js"></script>
+<script src="theme-admin/dason/assets/libs/simplebar/simplebar.min.js"></script>
+<script src="theme-admin/dason/assets/libs/node-waves/waves.min.js"></script>
+<script src="theme-admin/dason/assets/libs/feather-icons/feather.min.js"></script>
+<!-- pace js -->
+<script src="theme-admin/dason/assets/libs/pace-js/pace.min.js"></script>
+<script src="theme-admin/dason/assets/js/pages/pass-addon.init.js"></script>
+
+<script src="theme-admin/dason/assets/js/pages/feather-icon.init.js"></script>
+
+
+<!-- apexcharts -->
+<script src="theme-admin/dason/assets/libs/apexcharts/apexcharts.min.js"></script>
+
+<!-- Plugins js-->
+<script src="theme-admin/dason/assets/libs/admin-resources/jquery.vectormap/jquery-jvectormap-1.2.2.min.js"></script>
+<script src="theme-admin/dason/assets/libs/admin-resources/jquery.vectormap/maps/jquery-jvectormap-world-mill-en.js">
+</script>
+
+<script src="theme-admin/dason/assets/js/pages/allchart.js"></script>
+<!-- dashboard init -->
+<script src="theme-admin/dason/assets/js/pages/dashboard.init.js"></script>
+
+<script src="theme-admin/dason/assets/js/app.js"></script>
+
 
     </body>
 

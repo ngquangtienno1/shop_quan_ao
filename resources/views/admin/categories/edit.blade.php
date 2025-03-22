@@ -1,24 +1,11 @@
-<!doctype html>
-<html lang="en">
-<!-- Mirrored from themesbrand.com/dason/layouts/ecommerce-orders.html by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 21 Mar 2025 10:58:56 GMT -->
+@include('admin.layouts.AdminLayout')
 
-<head>
-    <base href="{{ env('APP_URL') }}">
-    <meta charset="utf-8" />
-    <title>Orders | Dason - Admin & Dashboard Template</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta content="Premium Multipurpose Admin & Dashboard Template" name="description" />
-    <meta content="Themesbrand" name="author" />
-    @include('admin.layouts.libs_css')
-</head>
-
-<body data-topbar="dark">
+@section('content')
     <!-- <body data-layout="horizontal"> -->
     <!-- Begin page -->
     <div id="layout-wrapper">
-        @include('admin.layouts.header')
         <!-- ========== Left Sidebar Start ========== -->
-        @include('admin.layouts.sidebar')
+
         <!-- Left Sidebar End -->
         <!-- ============================================================== -->
         <!-- Start right Content here -->
@@ -48,7 +35,7 @@
                             <div class="card-header">
                                 <h4 class="card-title">Sửa danh mục</h4>
                             </div>
-                            <form action="{{ route('categories.update',$category->id) }}" method="POST">
+                            <form action="{{ route('categories.update', $category->id) }}" method="POST">
 
                                 @csrf
                                 @method('PUT')
@@ -104,13 +91,4 @@
 
     </div>
     <!-- /Right-bar -->
-
-    <!-- Right bar overlay-->
-    <div class="rightbar-overlay"></div>
-    @include('admin.layouts.libs_js')
-
-</body>
-
-<!-- Mirrored from themesbrand.com/dason/layouts/ecommerce-orders.html by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 21 Mar 2025 10:58:56 GMT -->
-
-</html>
+@endsection

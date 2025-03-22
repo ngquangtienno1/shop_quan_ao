@@ -1,9 +1,9 @@
 <?php
 
-use App\Http\Controllers\AuthController;
-use App\Http\Controllers\CategoryController;
+use App\Http\Controllers\Backend\AuthController;
+use App\Http\Controllers\Backend\CategoryController;
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\Backend\DashboardController;
 use App\Http\Controllers\OderController;
 use App\Http\Middleware\CheckLoginAdmin;
 
@@ -20,13 +20,6 @@ Route::prefix('admin')->group(function () {
         Route::get('/login', [AuthController::class , 'index'])->name('auth.index')->middleware('auth.login-admin');
         Route::post('/login', [AuthController::class , 'login'])->name('auth.login');
         Route::get('/logout', [AuthController::class , 'logout'])->name('auth.logout');
-
-
-
-
-
-
-
 
     //Dashboard route
     Route::get('/dashboard', [DashboardController::class , 'index'])->name('dashboard')->middleware('auth.login');

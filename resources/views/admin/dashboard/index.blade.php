@@ -1,38 +1,19 @@
-<!doctype html>
-<html lang="en">
+@extends('admin.layouts.AdminLayout')
 
 
-<!-- Mirrored from themesbrand.com/dason/layouts/index.html by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 21 Mar 2025 10:58:14 GMT -->
-
-<head>
-    <base href="{{ env('APP_URL') }}">
-    <meta charset="utf-8" />
-    <title>{{ $title }}</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta content="Premium Multipurpose Admin & Dashboard Template" name="description" />
-    <meta content="Themesbrand" name="author" />
-    @include('admin.layouts.libs_css')
-
-</head>
-
-<body data-topbar="dark">
-    @if(session('success'))
-    <div class="alert alert-success">
-        {{ session('success') }}
-    </div>
-@endif
-
-
-    @include('admin.layouts.header')
-
+@section('content')
 
     <!-- Begin page -->
     <div id="layout-wrapper">
 
 
-        @include('admin.layouts.sidebar')
 
 
+        @if (session('success'))
+            <div class="alert alert-success">
+                {{ session('success') }}
+            </div>
+        @endif
 
         <!-- ============================================================== -->
         <!-- Start right Content here -->
@@ -194,7 +175,8 @@
                                     <div class="row align-items-center">
                                         <div class="col-xl-8">
                                             <div>
-                                                <div id="market-overview" data-colors='["--bs-primary", "--bs-success"]'
+                                                <div id="market-overview"
+                                                    data-colors='["--bs-primary", "--bs-success"]'
                                                     class="apex-charts"></div>
                                             </div>
                                         </div>
@@ -318,9 +300,9 @@
                                         <h5 class="card-title me-2">Sales by Locations</h5>
                                         <div class="ms-auto">
                                             <div class="dropdown">
-                                                <a class="dropdown-toggle text-reset" href="#" id="dropdownMenuButton1"
-                                                    data-bs-toggle="dropdown" aria-haspopup="true"
-                                                    aria-expanded="false">
+                                                <a class="dropdown-toggle text-reset" href="#"
+                                                    id="dropdownMenuButton1" data-bs-toggle="dropdown"
+                                                    aria-haspopup="true" aria-expanded="false">
                                                     <span class="text-muted font-size-12">Sort By:</span> <span
                                                         class="fw-medium">World<i
                                                             class="mdi mdi-chevron-down ms-1"></i></span>
@@ -336,31 +318,32 @@
                                         </div>
                                     </div>
 
-                                    <div id="sales-by-locations" data-colors='["--bs-success"]' style="height: 253px">
+                                    <div id="sales-by-locations" data-colors='["--bs-success"]'
+                                        style="height: 253px">
                                     </div>
 
                                     <div class="px-2 py-2">
                                         <p class="mb-1">USA <span class="float-end">75%</span></p>
                                         <div class="progress mt-2" style="height: 6px;">
-                                            <div class="progress-bar progress-bar-striped bg-primary" role="progressbar"
-                                                style="width: 75%" aria-valuenow="75" aria-valuemin="0"
-                                                aria-valuemax="75">
+                                            <div class="progress-bar progress-bar-striped bg-primary"
+                                                role="progressbar" style="width: 75%" aria-valuenow="75"
+                                                aria-valuemin="0" aria-valuemax="75">
                                             </div>
                                         </div>
 
                                         <p class="mt-3 mb-1">Russia <span class="float-end">55%</span></p>
                                         <div class="progress mt-2" style="height: 6px;">
-                                            <div class="progress-bar progress-bar-striped bg-primary" role="progressbar"
-                                                style="width: 55%" aria-valuenow="55" aria-valuemin="0"
-                                                aria-valuemax="55">
+                                            <div class="progress-bar progress-bar-striped bg-primary"
+                                                role="progressbar" style="width: 55%" aria-valuenow="55"
+                                                aria-valuemin="0" aria-valuemax="55">
                                             </div>
                                         </div>
 
                                         <p class="mt-3 mb-1">Australia <span class="float-end">85%</span></p>
                                         <div class="progress mt-2" style="height: 6px;">
-                                            <div class="progress-bar progress-bar-striped bg-primary" role="progressbar"
-                                                style="width: 85%" aria-valuenow="85" aria-valuemin="0"
-                                                aria-valuemax="85">
+                                            <div class="progress-bar progress-bar-striped bg-primary"
+                                                role="progressbar" style="width: 85%" aria-valuenow="85"
+                                                aria-valuemin="0" aria-valuemax="85">
                                             </div>
                                         </div>
                                     </div>
@@ -404,7 +387,8 @@
                                                     class="img-fluid rounded-circle" alt="">
                                             </div>
                                             <div class="flex-grow-1">
-                                                <h5 class="font-size-15 mb-1"><a href="#" class="text-dark">Randy
+                                                <h5 class="font-size-15 mb-1"><a href="#"
+                                                        class="text-dark">Randy
                                                         Matthews</a></h5>
                                                 <span class="text-muted">Randy@gmail.com</span>
                                             </div>
@@ -432,7 +416,8 @@
                                                     class="img-fluid rounded-circle" alt="">
                                             </div>
                                             <div class="flex-grow-1">
-                                                <h5 class="font-size-15 mb-1"><a href="#" class="text-dark">Vernon
+                                                <h5 class="font-size-15 mb-1"><a href="#"
+                                                        class="text-dark">Vernon
                                                         Wood</a></h5>
                                                 <span class="text-muted">Vernon@gmail.com</span>
                                             </div>
@@ -460,7 +445,8 @@
                                                     class="img-fluid rounded-circle" alt="">
                                             </div>
                                             <div class="flex-grow-1">
-                                                <h5 class="font-size-15 mb-1"><a href="#" class="text-dark">Howard
+                                                <h5 class="font-size-15 mb-1"><a href="#"
+                                                        class="text-dark">Howard
                                                         Rhoades</a></h5>
                                                 <span class="text-muted">Howard@gmail.com</span>
                                             </div>
@@ -488,7 +474,8 @@
                                                     class="img-fluid rounded-circle" alt="">
                                             </div>
                                             <div class="flex-grow-1">
-                                                <h5 class="font-size-15 mb-1"><a href="#" class="text-dark">Arthur
+                                                <h5 class="font-size-15 mb-1"><a href="#"
+                                                        class="text-dark">Arthur
                                                         Zurcher</a></h5>
                                                 <span class="text-muted">Arthur@gmail.com</span>
                                             </div>
@@ -516,7 +503,8 @@
                                                     class="img-fluid rounded-circle" alt="">
                                             </div>
                                             <div class="flex-grow-1">
-                                                <h5 class="font-size-15 mb-1"><a href="#" class="text-dark">Angela
+                                                <h5 class="font-size-15 mb-1"><a href="#"
+                                                        class="text-dark">Angela
                                                         Palmer</a></h5>
                                                 <span class="text-muted">Angela@gmail.com</span>
                                             </div>
@@ -544,7 +532,8 @@
                                                     class="img-fluid rounded-circle" alt="">
                                             </div>
                                             <div class="flex-grow-1">
-                                                <h5 class="font-size-15 mb-1"><a href="#" class="text-dark">Dorothy
+                                                <h5 class="font-size-15 mb-1"><a href="#"
+                                                        class="text-dark">Dorothy
                                                         Wimson</a></h5>
                                                 <span class="text-muted">Dorothy@gmail.com</span>
                                             </div>
@@ -579,8 +568,8 @@
                                     <h4 class="card-title mb-0 flex-grow-1">Selling Products</h4>
                                     <div class="flex-shrink-0">
                                         <div class="dropdown align-self-start">
-                                            <a class="dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
-                                                aria-haspopup="true" aria-expanded="false">
+                                            <a class="dropdown-toggle" href="#" role="button"
+                                                data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                                 <i class="bx bx-dots-horizontal-rounded font-size-18 text-dark"></i>
                                             </a>
                                             <div class="dropdown-menu">
@@ -608,14 +597,16 @@
 
                                                     <td>
                                                         <div>
-                                                            <h5 class="font-size-15"><a href="#" class="text-dark">Half
+                                                            <h5 class="font-size-15"><a href="#"
+                                                                    class="text-dark">Half
                                                                     sleeve T-shirt</a></h5>
                                                             <span class="text-muted">$240.00</span>
                                                         </div>
                                                     </td>
 
                                                     <td>
-                                                        <p class="mb-1"><a href="#" class="text-dark">Available</a></p>
+                                                        <p class="mb-1"><a href="#"
+                                                                class="text-dark">Available</a></p>
                                                         <span class="text-muted">243K</span>
                                                     </td>
 
@@ -643,7 +634,8 @@
 
                                                     <td>
                                                         <div>
-                                                            <h5 class="font-size-15"><a href="#" class="text-dark">Light
+                                                            <h5 class="font-size-15"><a href="#"
+                                                                    class="text-dark">Light
                                                                     blue T-shirt</a></h5>
                                                             <span class="text-muted">$650.00</span>
                                                         </div>
@@ -679,14 +671,16 @@
 
                                                     <td>
                                                         <div>
-                                                            <h5 class="font-size-15"><a href="#" class="text-dark">Black
+                                                            <h5 class="font-size-15"><a href="#"
+                                                                    class="text-dark">Black
                                                                     Color T-shirt</a></h5>
                                                             <span class="text-muted">$325.00</span>
                                                         </div>
                                                     </td>
 
                                                     <td>
-                                                        <p class="mb-1"><a href="#" class="text-dark">Available</a></p>
+                                                        <p class="mb-1"><a href="#"
+                                                                class="text-dark">Available</a></p>
                                                         <span class="text-muted">2,586K</span>
                                                     </td>
 
@@ -721,7 +715,8 @@
                                                     </td>
 
                                                     <td>
-                                                        <p class="mb-1"><a href="#" class="text-dark">Available</a></p>
+                                                        <p class="mb-1"><a href="#"
+                                                                class="text-dark">Available</a></p>
                                                         <span class="text-muted">4,565K</span>
                                                     </td>
 
@@ -792,7 +787,8 @@
                                                     </td>
 
                                                     <td>
-                                                        <p class="mb-1"><a href="#" class="text-dark">Available</a></p>
+                                                        <p class="mb-1"><a href="#"
+                                                                class="text-dark">Available</a></p>
                                                         <span class="text-muted">125K</span>
                                                     </td>
 
@@ -853,16 +849,20 @@
                                                                     <p class="mb-0">Good Morning</p>
                                                                 </div>
                                                                 <div class="dropdown align-self-start">
-                                                                    <a class="dropdown-toggle" href="#" role="button"
-                                                                        data-bs-toggle="dropdown" aria-haspopup="true"
-                                                                        aria-expanded="false">
+                                                                    <a class="dropdown-toggle" href="#"
+                                                                        role="button" data-bs-toggle="dropdown"
+                                                                        aria-haspopup="true" aria-expanded="false">
                                                                         <i class="bx bx-dots-vertical-rounded"></i>
                                                                     </a>
                                                                     <div class="dropdown-menu">
-                                                                        <a class="dropdown-item" href="#">Copy</a>
-                                                                        <a class="dropdown-item" href="#">Save</a>
-                                                                        <a class="dropdown-item" href="#">Forward</a>
-                                                                        <a class="dropdown-item" href="#">Delete</a>
+                                                                        <a class="dropdown-item"
+                                                                            href="#">Copy</a>
+                                                                        <a class="dropdown-item"
+                                                                            href="#">Save</a>
+                                                                        <a class="dropdown-item"
+                                                                            href="#">Forward</a>
+                                                                        <a class="dropdown-item"
+                                                                            href="#">Delete</a>
                                                                     </div>
                                                                 </div>
                                                             </div>
@@ -883,16 +883,20 @@
                                                                     <p class="mb-0">Good morning</p>
                                                                 </div>
                                                                 <div class="dropdown align-self-start">
-                                                                    <a class="dropdown-toggle" href="#" role="button"
-                                                                        data-bs-toggle="dropdown" aria-haspopup="true"
-                                                                        aria-expanded="false">
+                                                                    <a class="dropdown-toggle" href="#"
+                                                                        role="button" data-bs-toggle="dropdown"
+                                                                        aria-haspopup="true" aria-expanded="false">
                                                                         <i class="bx bx-dots-vertical-rounded"></i>
                                                                     </a>
                                                                     <div class="dropdown-menu">
-                                                                        <a class="dropdown-item" href="#">Copy</a>
-                                                                        <a class="dropdown-item" href="#">Save</a>
-                                                                        <a class="dropdown-item" href="#">Forward</a>
-                                                                        <a class="dropdown-item" href="#">Delete</a>
+                                                                        <a class="dropdown-item"
+                                                                            href="#">Copy</a>
+                                                                        <a class="dropdown-item"
+                                                                            href="#">Save</a>
+                                                                        <a class="dropdown-item"
+                                                                            href="#">Forward</a>
+                                                                        <a class="dropdown-item"
+                                                                            href="#">Delete</a>
                                                                     </div>
                                                                 </div>
                                                             </div>
@@ -920,16 +924,20 @@
                                                                     </p>
                                                                 </div>
                                                                 <div class="dropdown align-self-start">
-                                                                    <a class="dropdown-toggle" href="#" role="button"
-                                                                        data-bs-toggle="dropdown" aria-haspopup="true"
-                                                                        aria-expanded="false">
+                                                                    <a class="dropdown-toggle" href="#"
+                                                                        role="button" data-bs-toggle="dropdown"
+                                                                        aria-haspopup="true" aria-expanded="false">
                                                                         <i class="bx bx-dots-vertical-rounded"></i>
                                                                     </a>
                                                                     <div class="dropdown-menu">
-                                                                        <a class="dropdown-item" href="#">Copy</a>
-                                                                        <a class="dropdown-item" href="#">Save</a>
-                                                                        <a class="dropdown-item" href="#">Forward</a>
-                                                                        <a class="dropdown-item" href="#">Delete</a>
+                                                                        <a class="dropdown-item"
+                                                                            href="#">Copy</a>
+                                                                        <a class="dropdown-item"
+                                                                            href="#">Save</a>
+                                                                        <a class="dropdown-item"
+                                                                            href="#">Forward</a>
+                                                                        <a class="dropdown-item"
+                                                                            href="#">Delete</a>
                                                                     </div>
                                                                 </div>
                                                             </div>
@@ -950,16 +958,20 @@
                                                                     </p>
                                                                 </div>
                                                                 <div class="dropdown align-self-start">
-                                                                    <a class="dropdown-toggle" href="#" role="button"
-                                                                        data-bs-toggle="dropdown" aria-haspopup="true"
-                                                                        aria-expanded="false">
+                                                                    <a class="dropdown-toggle" href="#"
+                                                                        role="button" data-bs-toggle="dropdown"
+                                                                        aria-haspopup="true" aria-expanded="false">
                                                                         <i class="bx bx-dots-vertical-rounded"></i>
                                                                     </a>
                                                                     <div class="dropdown-menu">
-                                                                        <a class="dropdown-item" href="#">Copy</a>
-                                                                        <a class="dropdown-item" href="#">Save</a>
-                                                                        <a class="dropdown-item" href="#">Forward</a>
-                                                                        <a class="dropdown-item" href="#">Delete</a>
+                                                                        <a class="dropdown-item"
+                                                                            href="#">Copy</a>
+                                                                        <a class="dropdown-item"
+                                                                            href="#">Save</a>
+                                                                        <a class="dropdown-item"
+                                                                            href="#">Forward</a>
+                                                                        <a class="dropdown-item"
+                                                                            href="#">Delete</a>
                                                                     </div>
                                                                 </div>
                                                             </div>
@@ -983,16 +995,20 @@
                                                                     </p>
                                                                 </div>
                                                                 <div class="dropdown align-self-start">
-                                                                    <a class="dropdown-toggle" href="#" role="button"
-                                                                        data-bs-toggle="dropdown" aria-haspopup="true"
-                                                                        aria-expanded="false">
+                                                                    <a class="dropdown-toggle" href="#"
+                                                                        role="button" data-bs-toggle="dropdown"
+                                                                        aria-haspopup="true" aria-expanded="false">
                                                                         <i class="bx bx-dots-vertical-rounded"></i>
                                                                     </a>
                                                                     <div class="dropdown-menu">
-                                                                        <a class="dropdown-item" href="#">Copy</a>
-                                                                        <a class="dropdown-item" href="#">Save</a>
-                                                                        <a class="dropdown-item" href="#">Forward</a>
-                                                                        <a class="dropdown-item" href="#">Delete</a>
+                                                                        <a class="dropdown-item"
+                                                                            href="#">Copy</a>
+                                                                        <a class="dropdown-item"
+                                                                            href="#">Save</a>
+                                                                        <a class="dropdown-item"
+                                                                            href="#">Forward</a>
+                                                                        <a class="dropdown-item"
+                                                                            href="#">Delete</a>
                                                                     </div>
                                                                 </div>
                                                             </div>
@@ -1020,16 +1036,20 @@
                                                                     </p>
                                                                 </div>
                                                                 <div class="dropdown align-self-start">
-                                                                    <a class="dropdown-toggle" href="#" role="button"
-                                                                        data-bs-toggle="dropdown" aria-haspopup="true"
-                                                                        aria-expanded="false">
+                                                                    <a class="dropdown-toggle" href="#"
+                                                                        role="button" data-bs-toggle="dropdown"
+                                                                        aria-haspopup="true" aria-expanded="false">
                                                                         <i class="bx bx-dots-vertical-rounded"></i>
                                                                     </a>
                                                                     <div class="dropdown-menu">
-                                                                        <a class="dropdown-item" href="#">Copy</a>
-                                                                        <a class="dropdown-item" href="#">Save</a>
-                                                                        <a class="dropdown-item" href="#">Forward</a>
-                                                                        <a class="dropdown-item" href="#">Delete</a>
+                                                                        <a class="dropdown-item"
+                                                                            href="#">Copy</a>
+                                                                        <a class="dropdown-item"
+                                                                            href="#">Save</a>
+                                                                        <a class="dropdown-item"
+                                                                            href="#">Forward</a>
+                                                                        <a class="dropdown-item"
+                                                                            href="#">Delete</a>
                                                                     </div>
                                                                 </div>
                                                             </div>
@@ -1056,7 +1076,8 @@
 
                                                                     <ul class="list-inline message-img mt-3  mb-0">
                                                                         <li class="list-inline-item message-img-list">
-                                                                            <a class="d-inline-block m-1" href="#">
+                                                                            <a class="d-inline-block m-1"
+                                                                                href="#">
                                                                                 <img src="theme-admin/dason/assets/images/small/img-1.jpg"
                                                                                     alt=""
                                                                                     class="rounded img-thumbnail">
@@ -1064,7 +1085,8 @@
                                                                         </li>
 
                                                                         <li class="list-inline-item message-img-list">
-                                                                            <a class="d-inline-block m-1" href="#">
+                                                                            <a class="d-inline-block m-1"
+                                                                                href="#">
                                                                                 <img src="theme-admin/dason/assets/images/small/img-2.jpg"
                                                                                     alt=""
                                                                                     class="rounded img-thumbnail">
@@ -1073,16 +1095,20 @@
                                                                     </ul>
                                                                 </div>
                                                                 <div class="dropdown align-self-start">
-                                                                    <a class="dropdown-toggle" href="#" role="button"
-                                                                        data-bs-toggle="dropdown" aria-haspopup="true"
-                                                                        aria-expanded="false">
+                                                                    <a class="dropdown-toggle" href="#"
+                                                                        role="button" data-bs-toggle="dropdown"
+                                                                        aria-haspopup="true" aria-expanded="false">
                                                                         <i class="bx bx-dots-vertical-rounded"></i>
                                                                     </a>
                                                                     <div class="dropdown-menu">
-                                                                        <a class="dropdown-item" href="#">Copy</a>
-                                                                        <a class="dropdown-item" href="#">Save</a>
-                                                                        <a class="dropdown-item" href="#">Forward</a>
-                                                                        <a class="dropdown-item" href="#">Delete</a>
+                                                                        <a class="dropdown-item"
+                                                                            href="#">Copy</a>
+                                                                        <a class="dropdown-item"
+                                                                            href="#">Save</a>
+                                                                        <a class="dropdown-item"
+                                                                            href="#">Forward</a>
+                                                                        <a class="dropdown-item"
+                                                                            href="#">Delete</a>
                                                                     </div>
                                                                 </div>
                                                             </div>
@@ -1120,24 +1146,10 @@
             </div>
             <!-- End Page-content -->
 
-            @include('admin.layouts.footer')
+
         </div>
         <!-- end main content-->
 
     </div>
     <!-- END layout-wrapper -->
-
-
-
-
-    <!-- Right bar overlay-->
-    <div class="rightbar-overlay"></div>
-
-
-    @include('admin.layouts.libs_js')
-</body>
-
-
-<!-- Mirrored from themesbrand.com/dason/layouts/index.html by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 21 Mar 2025 10:58:44 GMT -->
-
-</html>
+@endsection

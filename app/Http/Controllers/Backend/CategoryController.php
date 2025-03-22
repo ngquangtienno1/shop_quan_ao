@@ -1,11 +1,14 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Backend;
+
 
 use App\Http\Requests\StoreCategoryRequest;
 use App\Models\Category;
 use App\Http\Requests\UpdateCategoryRequest;
 use Illuminate\Http\Request;
+use App\Http\Controllers\Controller;
+
 
 
 class CategoryController extends Controller
@@ -48,7 +51,7 @@ class CategoryController extends Controller
     /**
      * Display the specified resource.
      */
-    
+
 
     /**
      * Show the form for editing the specified resource.
