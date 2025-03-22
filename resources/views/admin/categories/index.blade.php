@@ -30,7 +30,7 @@
                     <div class="row">
                         <div class="col-12">
                             <div class="page-title-box d-sm-flex align-items-center justify-content-between">
-                               <h4><a href="{{ route('categories.index')}}" >Danh sách danh mục</a></h4> 
+                               <h4><a href="{{ route('categories.index')}}" >Danh sách danh mục</a></h4>
                                 <div class="page-title-right">
                                     <ol class="breadcrumb m-0">
                                         <li class="breadcrumb-item"><a href="javascript: void(0);">Quản lý danh mục</a>
@@ -58,7 +58,7 @@
                                                             </button>
                                                         </div>
                                                     </form>
-                                                    
+
                                                 </div>
                                             </div>
                                         </div>
@@ -93,11 +93,11 @@
                                                         <td>{{ Str::limit($category->description, 30, '...') }}</td>
                                                         <td>
                                                             <div class="d-flex gap-3">
-                                                                <a href="{{ route('categories.edit', ['id' => $category->id]) }}"
+                                                                <a href="{{ route('categories.edit', $category->id) }}"
                                                                     class="text-success"><i
                                                                         class="mdi mdi-pencil font-size-18"></i></a>
                                                                 <form
-                                                                    action="{{ route('categories.destroy', ['id' => $category->id]) }}"
+                                                                    action="{{ route('categories.destroy', $category->id) }}"
                                                                     method="POST">
                                                                     @csrf
                                                                     @method('DELETE')

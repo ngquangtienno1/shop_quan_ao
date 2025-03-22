@@ -23,32 +23,35 @@
         <!-- ============================================================== -->
         <!-- Start right Content here -->
         <!-- ============================================================== -->
-        <form action="{{ route('categories.update') }}" method="POST">
-            
-            @csrf
-            <div class="main-content">
-                <div class="page-content">
-                    <div class="container-fluid">
-                        <div class="row">
-                            <div class="col-12">
-                                <div class="page-title-box d-sm-flex align-items-center justify-content-between">
-                                    <a href="{{ route('categories.index')}}" class="btn btn-warning">Quay lại</a>
-    
-                                    <div class="page-title-right">
-                                        <ol class="breadcrumb m-0">
-                                            <li class="breadcrumb-item"><a href="{{ route('categories.index')}}">Quản lý danh mục</a>
-                                            </li>
-                                            <li class="breadcrumb-item active">Sửa danh mục</li>
-                                        </ol>
-                                    </div>
+
+        <div class="main-content">
+            <div class="page-content">
+                <div class="container-fluid">
+                    <div class="row">
+                        <div class="col-12">
+                            <div class="page-title-box d-sm-flex align-items-center justify-content-between">
+                                <a href="{{ route('categories.index') }}" class="btn btn-warning">Quay lại</a>
+
+                                <div class="page-title-right">
+                                    <ol class="breadcrumb m-0">
+                                        <li class="breadcrumb-item"><a href="{{ route('categories.index') }}">Quản lý
+                                                danh mục</a>
+                                        </li>
+                                        <li class="breadcrumb-item active">Sửa danh mục</li>
+                                    </ol>
                                 </div>
                             </div>
                         </div>
-                        <div class="col-xl-12">
-                            <div class="card">
-                                <div class="card-header">
-                                    <h4 class="card-title">Sửa danh mục</h4>
-                                </div>
+                    </div>
+                    <div class="col-xl-12">
+                        <div class="card">
+                            <div class="card-header">
+                                <h4 class="card-title">Sửa danh mục</h4>
+                            </div>
+                            <form action="{{ route('categories.update',$category->id) }}" method="POST">
+
+                                @csrf
+                                @method('PUT')
                                 <div class="card-body">
                                     <div class="row">
                                         <div class="col-md-6">
@@ -57,7 +60,7 @@
                                                 <input type="text" class="form-control" id="validationCustom01"
                                                     name="name" placeholder="Mời nhập tên danh mục"
                                                     value="{{ $category->name }}">
-                                                    
+
                                                 @if ($errors->has('name'))
                                                     <span class="text-danger">{{ $errors->first('name') }}</span>
                                                 @endif
@@ -79,23 +82,25 @@
 
                                     <button class="btn btn-primary" type="submit">Sửa</button>
                                 </div>
-                            </div>
-                            <!-- end card -->
+
+                            </form>
+
                         </div>
-                        <!-- end main content-->
-
+                        <!-- end card -->
                     </div>
-                    <!-- END layout-wrapper -->
-
-
-                    <!-- Right Sidebar -->
-
+                    <!-- end main content-->
 
                 </div>
+                <!-- END layout-wrapper -->
+
+
+                <!-- Right Sidebar -->
+
 
             </div>
 
-        </form>
+        </div>
+
 
     </div>
     <!-- /Right-bar -->

@@ -17,7 +17,7 @@ class CategoryController extends Controller
 
     public function index(Request $request)
     {
-        $categories = Category::paginate(5); // 10 danh mục mỗi trang
+        $categories = Category::latest()->paginate(5); // 10 danh mục mỗi trang
 
         return view('admin.categories.index', compact('categories'))->with('i', (request()->input('page', 1) - 1) * 5);
     }
@@ -48,16 +48,12 @@ class CategoryController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(Category $category)
-    {
-        $category = Category::find($category->id);
-        return view('admin.categories.show', compact('category'));
-    }
+    
 
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(Category $category, $id)
+    public function edit($id)
     {
         //
         $category = Category::find($id);
@@ -67,24 +63,33 @@ class CategoryController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(UpdateCategoryRequest $request, Category $category)
+    public function update(UpdateCategoryRequest $request, $id)
     {
         //
         $request->validate([
             'name' => 'required',
             'description' => 'required',
         ]);
-        $category->update($request->all());
+
+        $category = Category::find($id);
+
+        $category->update([
+            'name' => $request->name,
+            'description' => $request->description,
+        ]);
         return redirect()->route('categories.index')->with('success', 'Category updated successfully');
     }
 
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(Category $category)
+    public function destroy(Category $category,$id)
     {
         // dd($category);
-        $category->delete();
+        $category = Category::find($id);
+
+          $category->delete();
+
         return redirect()->route('categories.index')->with('success', 'Danh mục đã được xóa thành công!');
     }
 

@@ -20,12 +20,7 @@
 
 
 
-                            <li>
-                                <a href="apps-calendar.html">
-                                    <i data-feather="calendar"></i>
-                                    <span data-key="t-calendar">Calendar</span>
-                                </a>
-                            </li>
+                        
 
                             <li>
                                 <a href="javascript: void(0);" class="has-arrow">
@@ -43,7 +38,7 @@
                                     <span data-key="t-contacts">Quản lý đơn hàng</span>
                                 </a>
                                 <ul class="sub-menu" aria-expanded="false">
-                                    <li><a href="{{route('oders.index')}}" data-key="t-user-grid">Danh sách đơn hàng</a></li>
+                                    {{-- <li><a href="{{route('oders.index')}}" data-key="t-user-grid">Danh sách đơn hàng</a></li> --}}
 
                                 </ul>
                             </li>

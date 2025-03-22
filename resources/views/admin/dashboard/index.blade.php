@@ -16,8 +16,16 @@
 </head>
 
 <body data-topbar="dark">
+    @if(session('success'))
+    <div class="alert alert-success">
+        {{ session('success') }}
+    </div>
+@endif
+
 
     @include('admin.layouts.header')
+
+
     <!-- Begin page -->
     <div id="layout-wrapper">
 

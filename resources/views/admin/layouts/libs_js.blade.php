@@ -7,6 +7,9 @@
 <script src="theme-admin/dason/assets/libs/feather-icons/feather.min.js"></script>
 <!-- pace js -->
 <script src="theme-admin/dason/assets/libs/pace-js/pace.min.js"></script>
+<script src="theme-admin/dason/assets/js/pages/pass-addon.init.js"></script>
+
+<script src="theme-admin/dason/assets/js/pages/feather-icon.init.js"></script>
 
 
 <!-- apexcharts -->
@@ -14,7 +17,8 @@
 
 <!-- Plugins js-->
 <script src="theme-admin/dason/assets/libs/admin-resources/jquery.vectormap/jquery-jvectormap-1.2.2.min.js"></script>
-<script src="theme-admin/dason/assets/libs/admin-resources/jquery.vectormap/maps/jquery-jvectormap-world-mill-en.js"></script>
+<script src="theme-admin/dason/assets/libs/admin-resources/jquery.vectormap/maps/jquery-jvectormap-world-mill-en.js">
+</script>
 
 <script src="theme-admin/dason/assets/js/pages/allchart.js"></script>
 <!-- dashboard init -->
