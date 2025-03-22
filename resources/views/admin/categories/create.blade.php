@@ -1,4 +1,8 @@
-@include('admin.layouts.AdminLayout')
+@extends('admin.layouts.AdminLayout')
+
+
+@section('title', 'Thêm danh mục')
+
 @section('content')
 
     <!-- Begin page -->

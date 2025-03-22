@@ -1,6 +1,6 @@
 @extends('admin.layouts.AdminLayout')
 
-
+@section('title', 'Dashboard')
 @section('content')
 
     <!-- Begin page -->

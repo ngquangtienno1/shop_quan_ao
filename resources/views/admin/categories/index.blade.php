@@ -1,5 +1,6 @@
 @extends('admin.layouts.AdminLayout')
 
+@section('title', 'Quản lý danh mục')
 
 @section('content')
     <!-- Begin page -->

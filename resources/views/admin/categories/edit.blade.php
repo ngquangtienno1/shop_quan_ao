@@ -1,4 +1,6 @@
-@include('admin.layouts.AdminLayout')
+@extends('admin.layouts.AdminLayout')
+
+@section('title', 'Cập nhật danh mục')
 
 @section('content')
     <!-- <body data-layout="horizontal"> -->
