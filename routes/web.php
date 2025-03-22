@@ -35,6 +35,7 @@ Route::prefix('admin')->group(function () {
     // Route::get('/categories/{category}', [CategoryController::class , 'show'])->name('categories.show');
 
     //Product route
+ 
 
     //Oder route
 
