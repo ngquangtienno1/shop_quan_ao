@@ -17,6 +17,8 @@ class OrderController extends Controller
     public function index()
     {
         //
+        $orders = Order::with('user')->latest()->paginate(10); // 10 đơn hàng mỗi trang
+        return view('admin.orders.index', compact('orders'))->with('i', (request()->input('page', 1) - 1) * 5);
     }
 
     /**
@@ -38,9 +40,12 @@ class OrderController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(Order $order)
+    public function show($id)
     {
         //
+        $order = Order::findOrFail($id);
+        return view('admin.orders.show', compact('order'));
+        
     }
 
     /**
@@ -49,6 +54,7 @@ class OrderController extends Controller
     public function edit(Order $order)
     {
         //
+        
     }
 
     /**

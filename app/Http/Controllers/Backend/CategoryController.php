@@ -20,7 +20,7 @@ class CategoryController extends Controller
 
     public function index(Request $request)
     {
-        $categories = Category::latest()->paginate(5); // 10 danh mục mỗi trang
+        $categories = Category::latest()->paginate(10); // 10 danh mục mỗi trang
 
         return view('admin.categories.index', compact('categories'))->with('i', (request()->input('page', 1) - 1) * 5);
     }
@@ -33,8 +33,6 @@ class CategoryController extends Controller
     {
 
         return view('admin.categories.create');
-       
-
     }
 
     /**
@@ -54,7 +52,11 @@ class CategoryController extends Controller
     /**
      * Display the specified resource.
      */
-
+    public function show($id)
+    {
+        $category = Category::findOrFail($id);
+        return view('admin.categories.show', compact('category'));}
+    
 
     /**
      * Show the form for editing the specified resource.
@@ -89,15 +91,29 @@ class CategoryController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(Category $category,$id)
+    public function destroy(Category $category, $id)
     {
         // dd($category);
         $category = Category::find($id);
 
-          $category->delete();
+        $category->delete();
 
         return redirect()->route('categories.index')->with('success', 'Danh mục đã được xóa thành công!');
     }
+
+    public function bulkDelete(Request $request)
+    {
+        $categoryIds = json_decode($request->category_ids, true);
+
+        if (empty($categoryIds)) {
+            return redirect()->route('categories.index')->with('error', 'Không có danh mục nào được chọn.');
+        }
+
+        Category::whereIn('id', $categoryIds)->delete();
+        return redirect()->route('categories.index')->with('success', 'Xóa danh mục thành công!');
+    }
+
+
 
     public function search(Request $request)
     {
@@ -108,6 +124,6 @@ class CategoryController extends Controller
             ->paginate(5)
             ->appends(['keyword' => $keyword]);
 
-            return view('admin.categories.index', compact('categories'))->with('i', (request()->input('page', 1) - 1) * 5);
+        return view('admin.categories.index', compact('categories'))->with('i', (request()->input('page', 1) - 1) * 5);
     }
 }

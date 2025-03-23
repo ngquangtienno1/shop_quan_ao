@@ -4,6 +4,7 @@ use App\Http\Controllers\Backend\AuthController;
 use App\Http\Controllers\Backend\CategoryController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Backend\DashboardController;
+use App\Http\Controllers\Backend\OrderController;
 use App\Http\Controllers\OderController;
 use App\Http\Middleware\CheckLoginAdmin;
 
@@ -32,12 +33,22 @@ Route::prefix('admin')->group(function () {
     Route::put('/categories/{id}', [CategoryController::class , 'update'])->name('categories.update');
     Route::delete('/categories/{id}', [CategoryController::class , 'destroy'])->name('categories.destroy');
     Route::get('/categories/search', [CategoryController::class , 'search'])->name('categories.search');
-    // Route::get('/categories/{category}', [CategoryController::class , 'show'])->name('categories.show');
+    Route::post('/categories/bulk-delete', [CategoryController::class, 'bulkDelete'])->name('categories.bulkDelete');
+    Route::get('/categories/{id}', [CategoryController::class , 'show'])->name('categories.show');
 
     //Product route
  
 
     //Oder route
+    Route::get('/orders', [OrderController::class , 'index'])->name('orders.index')->middleware('auth.login');
+    // Route::get('/orders/create', [OrderController::class , 'create'])->name('orders.create');
+    // Route::post('/orders', [OrderController::class , 'store'])->name('orders.store');
+    Route::get('/orders/edit/{id}', [OrderController::class , 'edit'])->name('orders.edit');
+    Route::put('/orders/{id}', [OrderController::class , 'update'])->name('orders.update');
+    Route::delete('/orders/{id}', [OrderController::class , 'destroy'])->name('orders.destroy');
+    Route::get('/orders/search', [OrderController::class , 'search'])->name('orders.search');
+    Route::post('/orders/bulk-delete', [OrderController::class, 'bulkDelete'])->name('orders.bulkDelete');
+    Route::get('/orders/{id}', [OrderController::class , 'show'])->name('orders.show');
 
 });
 
